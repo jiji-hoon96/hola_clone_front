@@ -44,8 +44,16 @@ const NavBtn = styled.button`
   height:50px;
   :hover{
     transform: scale(1.03);
+    div{
+    background-color: #F9758F;
+        width:100%;
+        height:10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
   }
-  
+  }
+
 `
 
 function Navbar() {
@@ -56,11 +64,13 @@ function Navbar() {
         <NavBtn>
           <Link to={{pathname : "/write"}}>
             새 글 쓰기
+            <div/>
           </Link>
         </NavBtn>
         <NavBtn>
           <Link to={{pathname: "/login"}}>
             로그인
+            <div/>
           </Link>
         </NavBtn>
       </NavbarRightDiv>

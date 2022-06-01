@@ -1,31 +1,28 @@
 import { AnimateSharedLayout,motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from 'styled-components'
-
-const skillArr = [
-    {name: "Popular", value: ["타입스크립트","스프링"]},
-    {name: "Front-End", value: ["자바스크립트","리엑트","뷰"]},
-    {name: "Back-End", value: ["Spring","자바"]},
-    {name: "Mobile/App", value: ["Flutter","ReactNative"]},
-    {name: "Etc", value: ["AWS","Docker"]},
-    {name: "Total", value: ["전부다","토탈"]},
-]
-
-
+import dataSkill from './data/dataSkill'
 
 const SelectDiv= styled.div`
     width:100%;
-    height:300px;
+    height:100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `
 const SelectBar = styled.div`
     display: flex;
 `
 
 const SelectBtn = styled.button`
-    width: 100%;
-    height:60px;
-    border:none;   
-    font-size: 24px;
+    width: 120px;
+    height:50px;
+    border:none; 
+    background-color: white;
+    margin  : 10px 20px ;
+    font-size: 18px;
     cursor: pointer;
     :hover{
         transform: scale(1.03);
@@ -41,22 +38,43 @@ const SelectBtn = styled.button`
 `
 
 const ShowDiv = styled.div`
-    width:100px;
-    height:50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width:900px;
+    height:100%;
     font-size: 24px;
+    background-color: white;
     color:black;
 `
-
+const ShowItem= styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:150px;
+    height:50px;
+    margin: 5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    :hover{
+        cursor: pointer;
+        transform: scale(1.05);
+        background-color: #FD8E8B;
+        color:white;
+    }
+`
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
     };
+    const newList = dataSkill[currentTab].value;
+    
     return (
         <SelectDiv>
             <SelectBar>
-            {skillArr.map((ele,index)=>{
+            {dataSkill.map((ele,index)=>{
                 return (
                     <SelectBtn key={index} onClick={()=>selectMenuHandler(index)}>
                         {ele.name}
@@ -68,9 +86,13 @@ function Select(){
             })}
             </SelectBar>
             <ShowDiv>
-                {skillArr[currentTab].value[0]}
-                {skillArr[currentTab].value[1]}
-                {skillArr[currentTab].value[2]}
+               {newList.map((ele,index)=>{
+                   return (
+                       <ShowItem key={index}>
+                           {ele}
+                       </ShowItem>
+                   )
+               })}
             </ShowDiv>
         </SelectDiv>
         

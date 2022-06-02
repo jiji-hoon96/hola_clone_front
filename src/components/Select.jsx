@@ -41,7 +41,7 @@ const ShowDiv = styled.ul`
     display: flex;
     flex-wrap: wrap;
     margin-left: 50px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     width:1000px;
     height:100%;
     font-size: 24px;
@@ -67,26 +67,44 @@ const ShowItem= styled.li`
 
 const ShowSelectList = styled.div`
 display: flex;
+flex-wrap: wrap;
 justify-content: center;
 align-items: center;
-width: 100%;
+width: 800px;
 height: 200px;
+margin-bottom: 20px;
 `
 
 const ShowSelectListItem = styled.div`
     font-size: 16px;
+    width: 100px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 10px 10px 0px;
+    border-radius: 10px;
+    background-color: #929090;
+    color:white;
     border: 1px solid black;
 `
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
-    const [returnitem, setReturnItem] = useState([]);
+    const [returnitem, setReturnItem] = useState("");
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
     };
     const newList = dataSkill[currentTab].value;
-    const onsubmit = (data) =>{
-       setReturnItem([returnitem,...data])
+    const onClick = (data) =>{
+       setReturnItem([...returnitem,data])
+       const deduplication = returnitem.includes(data);
+       if(deduplication){
+           setReturnItem([...returnitem])
+       }
+    }
+    const onDelete = (x)=>{
+        
     }
     return (
         <SelectDiv>
@@ -105,14 +123,15 @@ function Select(){
             <ShowDiv>
                {newList.map((ele,index)=>{
                    return (
-                       <ShowItem key={index} onClick={()=>onsubmit(ele)}>
+                       <ShowItem  key={index} onClick={()=>onClick(ele)} >
                            {ele}
                        </ShowItem>
                    )
                })}
             </ShowDiv>
             <ShowSelectList>
-                {returnitem}
+                {returnitem === ""  ?  null : 
+                    returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}</ShowSelectListItem>)}
             </ShowSelectList>
         </SelectDiv>
         

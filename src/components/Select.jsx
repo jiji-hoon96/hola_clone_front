@@ -70,6 +70,7 @@ const ShowItem= styled.li`
 const ShowSelectList = styled.div`
 display: flex;
 flex-wrap: wrap;
+column-gap: 20px;
 justify-content: center;
 align-items: center;
 width: 800px;
@@ -84,16 +85,16 @@ const ShowSelectListItem = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px 10px 10px 0px;
+    margin: 0px 5px 0px 0px;
     border-radius: 10px;
-    background-color: #929090;
+    background-color:  #FD8E8B;
     color:white;
     border: 1px solid black;
     :hover{
         cursor: pointer;
         transform: scale(1.05);
-        background-color: #FD8E8B;
-        color:white;
+        background-color: white;
+        color: black;
     }
 `
 
@@ -119,8 +120,6 @@ function Select(){
         newArray.push(...cutone)
         newArray.push(...cuttwo)
         setReturnItem(newArray)
-        //console.log(returnitem.slice(0,deleteItem));
-        //console.log(returnitem.slice(deleteItem+1,returnitem.length));
     }
     return (
         <SelectDiv>
@@ -145,13 +144,14 @@ function Select(){
                    )
                })}
             </ShowDiv>
-            <ShowSelectList>
-                {returnitem === ""  ?  null : 
+            {returnitem === "" ? null  : (
+                <ShowSelectList>
+                {returnitem === "" ? null : 
                     returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}<FontAwesomeIcon icon={faX} style={{marginLeft:10}}/></ShowSelectListItem>)}
-            </ShowSelectList>
+                </ShowSelectList>
+            )} 
         </SelectDiv>
-        
-        
+    
     )
 }
 

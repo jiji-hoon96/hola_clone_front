@@ -1,4 +1,6 @@
-import { AnimateSharedLayout,motion } from "framer-motion";
+
+import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styled from 'styled-components'
 import dataSkill from './data/dataSkill'
@@ -77,7 +79,7 @@ margin-bottom: 20px;
 
 const ShowSelectListItem = styled.div`
     font-size: 16px;
-    width: 100px;
+    width: 120px;
     height:50px;
     display: flex;
     justify-content: center;
@@ -87,11 +89,18 @@ const ShowSelectListItem = styled.div`
     background-color: #929090;
     color:white;
     border: 1px solid black;
+    :hover{
+        cursor: pointer;
+        transform: scale(1.05);
+        background-color: #FD8E8B;
+        color:white;
+    }
 `
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
     const [returnitem, setReturnItem] = useState("");
+    const newArray= []
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
     };
@@ -104,7 +113,14 @@ function Select(){
        }
     }
     const onDelete = (x)=>{
-        
+        const deleteItem = returnitem.indexOf(x);
+        const cutone =returnitem.slice(0,deleteItem);
+        const cuttwo =returnitem.slice(deleteItem+1,returnitem.length)
+        newArray.push(...cutone)
+        newArray.push(...cuttwo)
+        setReturnItem(newArray)
+        //console.log(returnitem.slice(0,deleteItem));
+        //console.log(returnitem.slice(deleteItem+1,returnitem.length));
     }
     return (
         <SelectDiv>
@@ -131,9 +147,10 @@ function Select(){
             </ShowDiv>
             <ShowSelectList>
                 {returnitem === ""  ?  null : 
-                    returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}</ShowSelectListItem>)}
+                    returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}<FontAwesomeIcon icon={faX} style={{marginLeft:10}}/></ShowSelectListItem>)}
             </ShowSelectList>
         </SelectDiv>
+        
         
     )
 }

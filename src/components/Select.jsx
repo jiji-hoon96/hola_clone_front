@@ -37,17 +37,18 @@ const SelectBtn = styled.button`
     }
 `
 
-const ShowDiv = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    width:900px;
+const ShowDiv = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    width:1000px;
     height:100%;
     font-size: 24px;
     background-color: white;
     color:black;
 `
-const ShowItem= styled.div`
+const ShowItem= styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,13 +65,29 @@ const ShowItem= styled.div`
     }
 `
 
+const ShowSelectList = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 200px;
+`
+
+const ShowSelectListItem = styled.div`
+    font-size: 16px;
+    border: 1px solid black;
+`
+
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
+    const [returnitem, setReturnItem] = useState([]);
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
     };
     const newList = dataSkill[currentTab].value;
-    
+    const onsubmit = (data) =>{
+       setReturnItem([returnitem,...data])
+    }
     return (
         <SelectDiv>
             <SelectBar>
@@ -88,12 +105,15 @@ function Select(){
             <ShowDiv>
                {newList.map((ele,index)=>{
                    return (
-                       <ShowItem key={index}>
+                       <ShowItem key={index} onClick={()=>onsubmit(ele)}>
                            {ele}
                        </ShowItem>
                    )
                })}
             </ShowDiv>
+            <ShowSelectList>
+                {returnitem}
+            </ShowSelectList>
         </SelectDiv>
         
     )

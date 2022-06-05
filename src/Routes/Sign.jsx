@@ -1,13 +1,12 @@
 import Navbar from "../components/Navbar";
 
-function Write() {
-
+function Sign() {
   return (
     <>
       <Navbar/>
-      <h1>새글작성 페이지입니다</h1>
+      <h1>회원가입 페이지입니다</h1>
     </>
   )
 }
 
-export default Write;
+export default Sign;

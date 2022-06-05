@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 const Navbardiv = styled.div`
   display: flex;
@@ -64,24 +64,31 @@ const NavBtn = styled.button`
 `
 
 function Navbar() {
+  const location= useLocation();
+  console.log(location.pathname)
   return (
     <Navbardiv>
       <Link to={{pathname:"/"}}>
         <NavLogo/>
       </Link>
       <NavbarRightDiv>
-        <NavBtn>
-          <Link to={{pathname : "/write"}}>
+        <Link to={{pathname : "/write"}}>
+          <NavBtn>
             새 글 쓰기
             <div/>
-          </Link>
-        </NavBtn>
-        <NavBtn>
-          <Link to={{pathname: "/login"}}>
+          </NavBtn>
+        </Link>
+        {location.pathname === "/login" ?  <Link to={{pathname: "/sign"}}>
+          <NavBtn>
+            회원가입
+            <div/>
+          </NavBtn>
+          </Link> :  <Link to={{pathname: "/login"}}>
+            <NavBtn>
             로그인
             <div/>
-          </Link>
-        </NavBtn>
+            </NavBtn>
+          </Link>}
       </NavbarRightDiv>
     </Navbardiv>
   )

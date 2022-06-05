@@ -12,7 +12,7 @@ const LoginForm = styled.div`
 
 const ModalForm = styled.div`
 width: 500px;
-height: 500px;
+height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,34 +22,64 @@ height: 500px;
   border-radius: 10px;
 `;
 
-const SmallNav = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 0px;
+const BtnDiv = styled.div`
+  width:250px;
+  height:100px;
+`
+
+const GoogleBtn = styled.div`
+  width: 200px;
+  height: 70px;
+  background-color: transparent;
+  background-image: url("img/logofile/googleimage.png");
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 10px 20px;
+  :hover {
+    transform: scale(1.04);
+  }
 `;
 
-const Btn = styled.button`
-  width: 150px;
-  height: 50px;
+const GithubBtn = styled.div`
+  width: 200px;
+  height: 70px;
+  border-radius: 20px;
+  background-image: url("img/logofile/gitimage.png");
+  background-position: center;
   background-color: white;
+  background-size: cover;
+  border-color:white;
+  cursor: pointer;
+  margin: 10px 20px;
+  
+  :hover {
+    transform: scale(1.04);
+  }
+`;
+const KaKaoBtn = styled.div`
+  width: 200px;
+  height: 70px;
+  background-image: url("https://i0.wp.com/wjclinic.com/wp-content/uploads/2020/08/png-clipart-kakao-talk-logo-kakaotalk-apple-kakaostory-kakaostyle-kakao-talk-text-computer.png?ssl=1");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
   border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
-  border: none;
   margin: 10px 20px;
-  border: 1px solid black;
   :hover {
     transform: scale(1.04);
-    background-color: #FE938B;
   }
 `;
+
 
 const Form = styled.form`
   display: flex;
   font-weight: 100;
   justify-content: center;
-  height: 100%;
+  height: 300px;
   align-items: center;
   flex-direction: column;
   input {
@@ -85,8 +115,8 @@ const SubmitBtn = styled.input`
 const LoginImg = styled.div`
   display: flex;
   justify-content: center;
-  width:250px;
-  height:150px;
+  width:450px;
+  height:100px;
   cursor: pointer;
   background-position: center;
   background-color: white;
@@ -99,7 +129,8 @@ const LoginTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 25px;
+  font-weight: 600;
 `
 
 function Login() {
@@ -117,21 +148,21 @@ function Login() {
   return (
     <>
       <Navbar/>
-      <LoginTitle>로그인</LoginTitle>
+      <LoginTitle>Organiztion에 오신 것을 환영합니다!</LoginTitle>
         <LoginForm>
         <ModalForm>
-          <SmallNav>
-            <Link to={{ pathname: "/sign" }}>
-              <Btn>
-                회원가입
-              </Btn>
-            </Link>   
-            <Link to={{ pathname: "/" }}>
-              <Btn>
-                나가기
-              </Btn>
-            </Link>             
-          </SmallNav>
+          <BtnDiv>
+            <GoogleBtn/>
+          </BtnDiv>
+          <h1>Google 로그인</h1>  
+          <BtnDiv>
+            <GithubBtn/>
+          </BtnDiv>
+          <h1>Github 로그인</h1>        
+          <BtnDiv>
+            <KaKaoBtn/>
+          </BtnDiv>
+          <h1>KaKao 로그인</h1>        
           <LoginImg/>
           <Form onSubmit={handleSubmit(onSubmitValid)}>
               <input

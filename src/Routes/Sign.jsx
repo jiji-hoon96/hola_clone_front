@@ -121,18 +121,6 @@ function Sign() {
     <SignTitle>회원 가입</SignTitle>
       <SignForm>
         <ModalForm>
-          <SmallNav>
-            <Link to={{ pathname: "/login" }}>
-              <Btn>
-                로그인
-              </Btn>
-            </Link>   
-            <Link to={{ pathname: "/" }}>
-              <Btn>
-                나가기
-              </Btn>
-            </Link>             
-          </SmallNav>
           <SignImg/>
           <Form onSubmit={handleSubmit(onSubmitValid)}>
               <input

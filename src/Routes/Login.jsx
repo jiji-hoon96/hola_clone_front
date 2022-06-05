@@ -4,19 +4,29 @@ import Navbar from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 
+const LoginForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 const ModalForm = styled.div`
+width: 500px;
+height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin:100px 20px;
+  border: 1px solid black;
+  border-radius: 10px;
 `;
 
 const SmallNav = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 10px;
+  justify-content: space-between;
+  margin: 20px 0px;
 `;
 
 const Btn = styled.button`
@@ -27,20 +37,23 @@ const Btn = styled.button`
   font-size: 16px;
   cursor: pointer;
   border: none;
-  margin-right: 30px;
-  &:hover {
+  margin: 10px 20px;
+  border: 1px solid black;
+  :hover {
     transform: scale(1.04);
-    background-color: "#fd8f8c"
+    background-color: #FE938B;
   }
 `;
+
 const Form = styled.form`
   display: flex;
+  font-weight: 100;
   justify-content: center;
   height: 100%;
   align-items: center;
   flex-direction: column;
   input {
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
     width: 250px;
     height: 50px;
@@ -49,6 +62,7 @@ const Form = styled.form`
     color: "#fd8f8c";
     border-radius: 10px;
     text-align: center;
+    font-weight: 100;
     color: "#fd8f8c";
     :focus {
       color: "#fd8f8c";
@@ -58,15 +72,27 @@ const Form = styled.form`
     }
   }
   span {
-    color: "#fd8f8c";
+    color: red;
   }
 `;
 const SubmitBtn = styled.input`
   color:  "#fd8f8c";
   :hover{
     transform: scale(1.1);
-    background-color:"#fd8f8c";
+    background-color:#fd8f8c;
   }
+`
+const LoginImg = styled.div`
+  display: flex;
+  justify-content: center;
+  width:250px;
+  height:150px;
+  cursor: pointer;
+  background-position: center;
+  background-color: white;
+  background-size: cover;
+  border-color:white;
+  background-image: url("img/logofile/facebook_cover_photo_1.png");
 `
 
 function Login() {
@@ -84,6 +110,7 @@ function Login() {
   return (
     <>
       <Navbar/>
+        <LoginForm>
         <ModalForm>
           <SmallNav>
             <Link to={{ pathname: "/sign" }}>
@@ -97,6 +124,7 @@ function Login() {
               </Btn>
             </Link>             
           </SmallNav>
+          <LoginImg/>
           <Form onSubmit={handleSubmit(onSubmitValid)}>
               <input
               {...register("username", {
@@ -116,7 +144,8 @@ function Login() {
               <span>{errors.password?.message}</span>
               <SubmitBtn type="submit" value="로그인" style={{ fontWeight: "bolder" }}/>
           </Form>
-      </ModalForm>
+        </ModalForm>
+        </LoginForm>
     </>
   )
 }

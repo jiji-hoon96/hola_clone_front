@@ -17,7 +17,7 @@ height: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin:100px 20px;
+  margin: 20px;
   border: 1px solid black;
   border-radius: 10px;
 `;
@@ -94,6 +94,13 @@ const LoginImg = styled.div`
   border-color:white;
   background-image: url("img/logofile/facebook_cover_photo_1.png");
 `
+const LoginTitle = styled.div`
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+`
 
 function Login() {
   const {
@@ -110,6 +117,7 @@ function Login() {
   return (
     <>
       <Navbar/>
+      <LoginTitle>로그인</LoginTitle>
         <LoginForm>
         <ModalForm>
           <SmallNav>

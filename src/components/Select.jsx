@@ -3,6 +3,7 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import styled from 'styled-components'
+import {Link} from "react-router-dom";
 import dataSkill from './data/dataSkill'
 
 const SelectDiv= styled.div`
@@ -98,10 +99,32 @@ const ShowSelectListItem = styled.div`
     }
 `
 
+
+const GoBtn = styled.div`
+    width:200px;
+    height:100px;
+    background-color:white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-bottom: 30px;
+    :hover{
+        background-color:  #FD8E8B;
+        transform: scale(1.05);
+    }
+`
+
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
     const [returnitem, setReturnItem] = useState("");
     const newArray= []
+    localStorage.setItem("skill",returnitem);
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
     };
@@ -150,8 +173,10 @@ function Select(){
                     returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}<FontAwesomeIcon icon={faX} style={{marginLeft:10}}/></ShowSelectListItem>)}
                 </ShowSelectList>
             )} 
+            <GoBtn>
+                <Link to={{pathname : "/project"}} >프로젝트/스터디 구하기 </Link>
+                </GoBtn>
         </SelectDiv>
-    
     )
 }
 

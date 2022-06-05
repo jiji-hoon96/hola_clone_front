@@ -1,5 +1,14 @@
+import Navbar from "../components/Navbar";
 function Project() {
-  return <h1>프로젝트 구인 페이지입니다</h1>;
+  const skillList = localStorage.getItem("skill");
+  return (
+    <>
+    <Navbar/>
+    <h1>{skillList}</h1>
+    </>
+    
+  )
+  
 }
 
 export default Project;

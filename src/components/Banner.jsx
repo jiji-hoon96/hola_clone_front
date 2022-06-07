@@ -65,14 +65,14 @@ const ImgBox = styled.div`
     justify-content: center;
     align-items: center;
     width:100%;
-    height:300px;
+    height: 450px;
     border-radius: 10px;
     background-color: white;
 `
 
 const OkkyImgBox= styled.div`
-  width:300px;
-  height:300px;
+  width:400px;
+  height:400px;
   cursor: pointer;
   border-radius: 10px;
   background-position: center;
@@ -87,19 +87,20 @@ const BannerDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height:500px;
-    background-color: white;
+    flex-direction: column;
+    
 `
 const NoticeBtn = styled.div`
+    width: 300px;
     height:150px;
     background-color: beige;
     border: none;
     text-align: center;
+    margin-right: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 22px;
-    margin-bottom: 20px;
     border-radius: 10px;
     cursor: pointer;
     :hover{
@@ -145,28 +146,33 @@ function Banner (){
     return(
         <StyledSlider {...settings}>
             <BannerDiv>
+              <ImgBox>
                 <NoticeBtn>
-                    <a href="https://rustic-tray-8dd.notion.site/0c464036142a430d97ace8b2e9217d13" rel="noreferrer" target='_blank'> 
-                        Organization Notion   
-                    </a>
+                  <a href="https://rustic-tray-8dd.notion.site/0c464036142a430d97ace8b2e9217d13" rel="noreferrer" target='_blank'> 
+                    Organization Notion   
+                  </a>
                 </NoticeBtn>
-                <ImgBox><SiNotion size="200"/></ImgBox>
+                <SiNotion size="300"/>
+              </ImgBox> 
             </BannerDiv>
             <BannerDiv>
+                <ImgBox>
                 <NoticeBtn>
                     <a href='https://github.com/h-dt' rel="noreferrer" target="_blank">
                         Organization Git
                     </a>
                 </NoticeBtn>
-                <ImgBox><SiGithub size="200"/></ImgBox>
+                <SiGithub size="300"/>
+                </ImgBox>
             </BannerDiv>
             <BannerDiv>
+                <ImgBox>
                 <NoticeBtn>
                     <a href='https://okky.kr/' rel="noreferrer" target="_blank">
                         Okky
                     </a>
                 </NoticeBtn>
-                <ImgBox><OkkyImgBox/></ImgBox>
+                <OkkyImgBox/></ImgBox>
             </BannerDiv>    
             </StyledSlider>
     )

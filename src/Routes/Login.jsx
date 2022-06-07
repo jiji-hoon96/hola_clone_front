@@ -52,10 +52,19 @@ const ToggleBtn = styled.div`
 const BtnDiv = styled.div`
   border-radius: 10px;
   display: flex;
+  width:300px;
+  height: 100px;
   justify-content: center;
   align-items: center;
   margin: 10px 0px;
   box-shadow: 2px 2px 2px 2px gray;
+`
+const SmallTitle = styled.div`
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333232;
+  font-weight: bold;
+
 `
 
 const GoogleBtn = styled.div`
@@ -74,8 +83,8 @@ const GoogleBtn = styled.div`
 `;
 
 const GithubBtn = styled.div`
-  width: 130px;
-  height: 130px;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
   background-image: url("img/logofile/gitimage.png");
   background-position: center;
@@ -90,8 +99,8 @@ const GithubBtn = styled.div`
   }
 `;
 const KaKaoBtn = styled.div`
-  width: 140px;
-  height: 140px;
+  width: 80px;
+  height: 80px;
   background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fem7IrN%2Fbtq7snvbsK4%2FEKApcyLKGqBGWr8tmsbkXK%2Fimg.png");
   background-position: center;
   background-repeat: none;
@@ -110,7 +119,7 @@ const Form = styled.form`
   display: flex;
   font-weight: 100;
   justify-content: center;
-  height: 500px;
+  height: 450px;
   align-items: center;
   flex-direction: column;
   input {
@@ -142,25 +151,20 @@ const SubmitBtn = styled.input`
     
   }
 `
-const LoginImg = styled.div`
-  display: flex;
-  justify-content: center;
-  width:450px;
-  height:100px;
-  cursor: pointer;
-  background-position: center;
-  background-color: white;
-  background-size: cover;
-  border-color:white;
-  background-image: url("img/logofile/facebook_cover_photo_1.png");
-`
 const LoginTitle = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-size: 25px;
   font-weight: 600;
+`
+
+const SmallLoginTitle = styled.div`
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
 `
 
 function Login() {
@@ -182,7 +186,9 @@ function Login() {
   return (
     <>
       <Navbar/>
-      <LoginTitle>Organiztion에 오신 것을 환영합니다!</LoginTitle>
+      <LoginTitle>Organiztion에 오신 것을 환영합니다!
+      <SmallLoginTitle>(로그인)</SmallLoginTitle>
+      </LoginTitle>
         <LoginForm>
         <ModalForm>
           <ToggleDiv>
@@ -200,15 +206,15 @@ function Login() {
             <BtnDiv style={{backgroundColor:"white"}}>
               <GoogleBtn/>
             </BtnDiv>
-            <h1>Google 로그인</h1>  
+            <SmallTitle>Google 로그인</SmallTitle>  
             <BtnDiv style={{backgroundColor:"#1B1F23"}}>
               <GithubBtn/>
             </BtnDiv>
-            <h1>Github 로그인</h1>        
+            <SmallTitle>Github 로그인</SmallTitle>        
             <BtnDiv  style={{backgroundColor:"#FAE300"}}>
               <KaKaoBtn/>
             </BtnDiv>
-            <h1>KaKao 로그인</h1>        
+            <SmallTitle>KaKao 로그인</SmallTitle>        
           </> : 
           <>
           <Form onSubmit={handleSubmit(onSubmitValid)}>

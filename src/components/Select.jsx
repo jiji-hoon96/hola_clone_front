@@ -103,6 +103,24 @@ const ShowSelectListItem = styled.div`
     }
 `
 
+const ResetBtn =styled.div`
+    background-color: red;
+    color:white;
+    width:150px;
+    height:70px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    :hover{
+        transform: scale(1.1);
+
+    }
+    `
+
 const ResultDiv =styled.div`
     width:100%;
     height:100%;
@@ -131,14 +149,19 @@ const ResultSelectBtn =styled.div`
 
 const ResultBox= styled.div`
     width:100%;
-    height:1000vh;
-    background-color: aquamarine;
+    height:100vh;
+    display: grid;
+    grid-template-columns: repeat(1fr);
 `
+
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
     const [returnitem, setReturnItem] = useState("");
     const newArray= []
+    const onResetBtn = () =>{
+        setReturnItem("")
+    }
     localStorage.setItem("skill",returnitem);
     const selectMenuHandler = (index) => {
         setCurrentTab(index);
@@ -184,10 +207,15 @@ function Select(){
                })}
             </ShowDiv>
             {returnitem === "" ? null  : (
-                <ShowSelectList>
-                {returnitem === "" ? null : 
-                    returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}<FontAwesomeIcon icon={faX} style={{marginLeft:10}}/></ShowSelectListItem>)}
-                </ShowSelectList>
+                <>
+                    <ShowSelectList>
+                    {returnitem === "" ? null : 
+                        returnitem.map((x)=> <ShowSelectListItem key={Math.random()} onClick={()=>onDelete(x)}>{x}<FontAwesomeIcon icon={faX} style={{marginLeft:10}}/></ShowSelectListItem>)}
+                    </ShowSelectList>
+                    <ResetBtn onClick={onResetBtn}>
+                        Reset
+                    </ResetBtn>
+                </>
             )}
         </SelectDiv>
         <ResultDiv>
@@ -200,7 +228,9 @@ function Select(){
                     스터디
                 </ResultSelectBtn>
             </ResultSelectBtnDiv>
-            <ResultBox></ResultBox>
+            <ResultBox>
+
+            </ResultBox>
         </ResultDiv>
         </>
         

@@ -6,26 +6,36 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 const StyledSlider = styled(Slider)`
+  margin: 0px 250px;
+         display: flex;
+justify-content: center;
+align-items: center;
     .slick-track {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .slick-slide {
-      
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
   .slick-prev {
-    left: 10px !important;
+    left: 30px !important;
     z-index: 1000;
   }
   .slick-next {
-    right: 10px !important;
+    right: 30px !important;
     z-index: 1000;
+  }
+  .slick-arrow.slick-next::before{
+    font-size: 40px;
+    color:black;
+    
+  }
+  .slick-arrow.slick-prev::before{
+    font-size: 40px;
+    color: black;
   }
 
   .slick-dots {
     display: flex;
-    width: 100px;
+    width: 200px;
     height:10px;
     margin: 0;
     padding: 0;
@@ -80,6 +90,39 @@ const OkkyImgBox= styled.div`
   background-size: cover;
   border-color:white;
   background-image: url("https://okky.kr/assets/images/okky_logo_fb.png");
+`
+const RocketImgBox= styled.div`
+  width:520px;
+  height:200px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-position: center;
+  background-color: white;
+  background-size: cover;
+  border-color:white;
+  background-image: url("https://static.rocketpunch.com/images/common/share_default.png");
+`
+const WantedImgBox= styled.div`
+  width:450px;
+  height:250px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-position: center;
+  background-color: white;
+  background-size: cover;
+  border-color:white;
+  background-image: url("https://file.mk.co.kr/meet/neds/2021/08/image_readtop_2021_777584_16287284604747853.jpg");
+`
+const JobImgBox= styled.div`
+  width:550px;
+  height:300px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-position: center;
+  background-color: white;
+  background-size: cover;
+  border-color:white;
+  background-image: url("http://www.ekoreanews.co.kr/news/photo/202001/41870_51828_054.png");
 `
     
 
@@ -174,6 +217,33 @@ function Banner (){
                 </NoticeBtn>
                 <OkkyImgBox/></ImgBox>
             </BannerDiv>    
+            <BannerDiv>
+                <ImgBox>
+                <NoticeBtn>
+                    <a href='https://www.rocketpunch.com/' rel="noreferrer" target="_blank">
+                        로켓펀치
+                    </a>
+                </NoticeBtn>
+                <RocketImgBox/></ImgBox>
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <NoticeBtn>
+                    <a href='https://www.wanted.co.kr/jobsfeed?utm_source=google&utm_medium=sa&utm_campaign=kr_recruit_web_sa_signup_brand&utm_term=%EC%9B%90%ED%8B%B0%EB%93%9C&utm_content=brand&gclid=CjwKCAjw7vuUBhBUEiwAEdu2pILbav9cmZbSGJI-ytJn2bgrt-U8pO3Kt8pxkkgHvTP5sTWUHGzhbRoC27YQAvD_BwE' rel="noreferrer" target="_blank">
+                        원티드
+                    </a>
+                </NoticeBtn>
+                <WantedImgBox/></ImgBox>
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <NoticeBtn>
+                    <a href='https://www.jobplanet.co.kr/job' rel="noreferrer" target="_blank">
+                        잡 플래닛
+                    </a>
+                </NoticeBtn>
+                <JobImgBox/></ImgBox>
+            </BannerDiv>           
             </StyledSlider>
     )
 }

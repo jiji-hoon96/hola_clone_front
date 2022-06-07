@@ -8,6 +8,7 @@ import { FaFolderOpen,FaBookOpen } from "react-icons/fa";
 
 
 const SelectDiv= styled.div`
+
     width:100%;
     height:100%;
     background-color: white;
@@ -77,7 +78,7 @@ justify-content: center;
 align-items: center;
 width: 800px;
 height: 200px;
-margin-bottom: 20px;
+margin-bottom: 10px;
 `
 
 const ShowSelectListItem = styled.div`

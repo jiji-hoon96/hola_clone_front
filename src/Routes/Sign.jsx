@@ -55,20 +55,16 @@ const Form = styled.form`
   input {
     font-size: 18px;
     cursor: pointer;
+    margin: 10px;
     width: 250px;
     height: 50px;
     margin: 5px;
-    border: 1px solid "#fd8f8c";
-    color: "#fd8f8c";
     border-radius: 10px;
     text-align: center;
     font-weight: 100;
-    color: "#fd8f8c";
     :focus {
-      color: "#fd8f8c";
       font-weight: bolder;
       transform: scale(1.09);
-      background-color: "#fd8f8c";
     }
   }
   span {
@@ -76,31 +72,24 @@ const Form = styled.form`
   }
 `;
 const SubmitBtn = styled.input`
-  color:  "#fd8f8c";
   :hover{
     transform: scale(1.1);
-    background-color:#fd8f8c;
   }
-`
-const SignImg = styled.div`
-  display: flex;
-  justify-content: center;
-  width:250px;
-  height:150px;
-  cursor: pointer;
-  background-position: center;
-  background-color: white;
-  background-size: cover;
-  border-color:white;
-  background-image: url("img/logofile/facebook_cover_photo_1.png");
 `
 
 const SignTitle = styled.div`
   margin-top: 50px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  font-size: 40px;
+  font-size: 25px;
+  font-weight: 600;
+`
+const SmallSignTitle = styled.div`
+   font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
 `
 
 function Sign() {
@@ -118,10 +107,13 @@ function Sign() {
   return (
     <>
     <Navbar/>
-    <SignTitle>회원 가입</SignTitle>
+    <SignTitle>
+    Organiztion에 오신 것을 환영합니다!
+    <SmallSignTitle>(회원가입)</SmallSignTitle>
+    </SignTitle>
+    
       <SignForm>
         <ModalForm>
-          <SignImg/>
           <Form onSubmit={handleSubmit(onSubmitValid)}>
               <input
               {...register("username", {

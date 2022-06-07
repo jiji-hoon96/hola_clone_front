@@ -5,9 +5,6 @@ import {  useState } from "react";
 import styled from 'styled-components'
 import dataSkill from './data/dataSkill'
 import { FaFolderOpen,FaBookOpen } from "react-icons/fa";
-document.cookie = "safeCookie1foo; SameSite=Lax";
-document.cookie = "safeCookie1foo";
-document.cookie = "crossCookie=bar; SameSite=None; Secure";
 
 
 const SelectDiv= styled.div`

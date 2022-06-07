@@ -11,6 +11,58 @@ const SliderDiv= styled.div`
   width:80%;
   min-width: 1000px;
 `
+const StyledSlider = styled(Slider)`
+    .slick-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  .slick-prev {
+    left: 10px !important;
+    z-index: 1000;
+  }
+  .slick-next {
+    right: 10px !important;
+    z-index: 1000;
+  }
+
+  .slick-dots {
+    display: flex;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, -50%);
+  }
+
+  .slick-dots li {
+    width: 6px;
+    height: 6px;
+    margin: 0 3.5px;
+  }
+
+  .slick-dots li button {
+    width: 6px;
+    height: 6px;
+  }
+
+  .slick-dots li button:before {
+    width: 6px;
+    height: 6px;
+    color: white;
+  }
+
+  .slick-dots li.slick-active button:before {
+    color: white !important;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+`
+
 const ImgBox = styled.div`
     display: flex;
     position: relative;
@@ -83,7 +135,7 @@ function NextArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "#fa798f"  }}
+        style={{ ...style, display: "block",  }}
         onClick={onClick}
       />
     );
@@ -94,7 +146,7 @@ function PrevArrow(props) {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "#fa798f" }}
+        style={{ ...style, display: "block",  }}
         onClick={onClick}
       />
     );
@@ -115,10 +167,10 @@ function Banner (){
       }
     return(
         <SliderDiv>
-        <Slider {...settings}>
+        <StyledSlider {...settings}>
             <BannerDiv>
                 <NoticeBtn>
-                    <a href="https://rustic-tray-8dd.notion.site/0c464036142a430d97ace8b2e9217d13" target='_blank'> 
+                    <a href="https://rustic-tray-8dd.notion.site/0c464036142a430d97ace8b2e9217d13" rel="noreferrer" target='_blank'> 
                         Organization Notion   
                     </a>
                     
@@ -127,7 +179,7 @@ function Banner (){
             </BannerDiv>
             <GitBannerDiv>
                 <NoticeBtn>
-                    <a href='https://github.com/h-dt' target="_blank">
+                    <a href='https://github.com/h-dt' rel="noreferrer" target="_blank">
                         Organization Git
                     </a>
                 </NoticeBtn>
@@ -135,13 +187,13 @@ function Banner (){
             </GitBannerDiv>
             <OkkyBannerDiv>
                 <NoticeBtn>
-                    <a href='https://okky.kr/' target="_blank">
+                    <a href='https://okky.kr/' rel="noreferrer" target="_blank">
                         Okky
                     </a>
                 </NoticeBtn>
                 <ImgBox><OkkyImgBox/></ImgBox>
             </OkkyBannerDiv>    
-            </Slider>
+            </StyledSlider>
         </SliderDiv>
         
         

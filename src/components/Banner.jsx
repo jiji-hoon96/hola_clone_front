@@ -9,6 +9,7 @@ const SliderDiv= styled.div`
   margin-top: 20px;
   margin-bottom: 40px;
   width:80%;
+  min-width: 1000px;
 `
 const ImgBox = styled.div`
     display: flex;
@@ -62,6 +63,7 @@ position: relative;
 const NoticeBtn = styled.button`
     position: relative;
     top:150px;
+    left: 1px;
     width:200px;
     height:150px;
     background-color: white;

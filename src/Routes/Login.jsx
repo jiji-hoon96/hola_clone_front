@@ -1,4 +1,3 @@
-import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useForm } from "react-hook-form";
@@ -175,6 +174,7 @@ function Login() {
     formState: { errors },
   } = useForm({mode:"onChange"});
   const [login, setLogin] = useState("")
+  console.log(login)
   const [logintoggle,setLoginToggle] =useState(false);
   const onSubmitValid=(data)=>{
     setLogin(data)

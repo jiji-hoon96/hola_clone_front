@@ -1,4 +1,3 @@
-import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useForm } from "react-hook-form";
@@ -20,29 +19,6 @@ height: 500px;
   margin: 20px;
   border: 1px solid black;
   border-radius: 10px;
-`;
-
-const SmallNav = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 0px;
-`;
-
-const Btn = styled.button`
-  width: 150px;
-  height: 50px;
-  background-color: white;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  margin: 10px 20px;
-  border: 1px solid black;
-  :hover {
-    transform: scale(1.04);
-    background-color: #FE938B;
-  }
 `;
 
 const Form = styled.form`
@@ -100,6 +76,7 @@ function Sign() {
     formState: { errors },
   } = useForm({mode:"onChange"});
   const [sign, setSign] = useState("")
+  console.log(sign)
   const onSubmitValid=(data)=>{
     setSign(data)
     reset()

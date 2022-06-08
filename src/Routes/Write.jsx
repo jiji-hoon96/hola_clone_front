@@ -1,7 +1,8 @@
 import Navbar from "../components/Navbar";
 import styled from 'styled-components'
-import { RiNumber1 } from "react-icons/ri";
+import { RiNumber1 ,RiNumber2 } from "react-icons/ri";
 import { useForm } from "react-hook-form";
+import { type } from "@testing-library/user-event/dist/type";
 
 const WriteDiv= styled.div`
   display: flex;
@@ -15,6 +16,7 @@ const WriteTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 20px 0px;
   width:100%;
   height:100px;
   font-size: 24px;
@@ -36,7 +38,7 @@ const Form = styled.form`
     cursor: pointer;
     width: 400px;
     height: 60px;
-    margin: 10px;
+    margin: 10px 0px 15px 0px;
     border: 1px solid "#fd8f8c";
     color: "#fd8f8c";
     border-radius: 10px;
@@ -58,7 +60,10 @@ const SubmitBtn = styled.input`
     
   }
 `
-
+const SmallTitle = styled.div`
+  font-size: 20px;
+  font-weight: bold;
+`
 
 function Write() {
   const {
@@ -81,13 +86,15 @@ function Write() {
           </WriteTitle>
       </WriteDiv>
       <Form onSubmit={handleSubmit(onSubmitValid)}>
+          <SmallTitle>모집 구분</SmallTitle>
           <select {...register("selecttitle")}>
-            <option value="none">프로젝트/스터디</option>
+            <option value="none" hidden>프로젝트/스터디</option>
             <option value="프로젝트">프로젝트</option>
             <option value="스터디">스터디</option>
           </select>
+          <SmallTitle>모집 인원</SmallTitle>
           <select {...register("selectperson")}>
-            <option value="none">미정 ~ 10명이상</option>
+          <option value="none" hidden>미정 ~ 10명이상</option>
             <option value="1명">1명</option>
             <option value="2명">2명</option>
             <option value="3명">3명</option>
@@ -100,13 +107,15 @@ function Write() {
             <option value="10명">10명</option>
             <option value="인원미정">인원미정</option>
           </select>
+          <SmallTitle>진행 방식</SmallTitle>
           <select {...register("selectonoff")}>
-            <option value="none">온라인/오프라인</option>
+          <option value="none" hidden>온라인/오프라인</option>
             <option value="온라인">온라인</option>
             <option value="오프라인">오프라인</option>
           </select>
+          <SmallTitle>진행 기간</SmallTitle>
           <select {...register("selectperiod")}>
-            <option value="none">기간 미정 ~ 6개월 이상</option>
+          <option value="none" hidden>기간 미정 ~ 6개월 이상</option>
             <option value="기간미정">기간미정</option>
             <option value="1개월">1개월</option>
             <option value="2개월">2개월</option>
@@ -115,46 +124,21 @@ function Write() {
             <option value="5개월">5개월</option>
             <option value="6개월 이상">6개월 이상</option>
           </select>
-          <select {...register("selectskill")} multiple>
-            <option value="none">프로젝트 사용 스택</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="TypeScript">TypeScript</option>
-            <option value="React">React</option>
-            <option value="Vue">Vue</option>
-            <option value="Nodejs">Nodejs</option>
-            <option value="Spring">Spring</option>
-            <option value="Java">Java</option>
-            <option value="Nextjs">Nextjs</option>
-            <option value="Nestjs">Nestjs</option>
-            <option value="Express">Express</option>
-            <option value="Go">Go</option>
-            <option value="C">C</option>
-            <option value="Python">Python</option>
-            <option value="Django">Django</option>
-            <option value="Swift">Swift</option>
-            <option value="Kotlin">Kotlin</option>
-            <option value="MySQL">MySQL</option>
-            <option value="MongoDB">MongoDB</option>
-            <option value="php">php</option>
-            <option value="GraphQl">GraphQl</option>
-            <option value="Firebase">Firebase</option>
-            <option value="ReactNative">ReactNative</option>
-            <option value="Unity">Unity</option>
-            <option value="Flutter">Flutter</option>
-            <option value="AWS">AWS</option>
-            <option value="Kubernetes">Kubernetes</option>
-            <option value="Docker">Docker</option>
-            <option value="Git">Git</option>
-            <option value="Figma">Figma</option>
-            <option value="Zeplin">Zeplin</option>
-          </select>
+          <SmallTitle>시작 예정일</SmallTitle>
           <input {...register("selectstart")} type="date"/>
+          <SmallTitle>연락 방법</SmallTitle>
           <select {...register("selectContact")}>
-            <option value="none">연락방법</option>
+          <option value="none" hidden>연락방법</option>
             <option value="kakaotalk">카카오톡 오픈채팅</option>
             <option value="email">Email</option>
             <option value="GoogleForm">GoogleForm</option>
           </select>
+          <WriteTitle>
+          <RiNumber2 style={{backgroundColor:"orangered" ,borderRadius:"50%", width:"30px",height:"30px",padding:"5px", marginRight:"5px"}}/>
+          프로젝트에 대해 소개해주세요.
+          </WriteTitle>
+          <SmallTitle>제목</SmallTitle>
+          <input {...register("selectname")} type="text" placeholder="글 제목을 입력해주세요"/>
           <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder" }}/>
           </Form>
     </>

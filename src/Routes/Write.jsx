@@ -2,7 +2,11 @@ import Navbar from "../components/Navbar";
 import styled from 'styled-components'
 import { RiNumber1 ,RiNumber2 } from "react-icons/ri";
 import { useForm } from "react-hook-form";
-import { type } from "@testing-library/user-event/dist/type";
+import OutlinedInput from '@mui/material/OutlinedInput';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useState } from "react";
 
 const WriteDiv= styled.div`
   display: flex;
@@ -65,17 +69,82 @@ const SmallTitle = styled.div`
   font-weight: bold;
 `
 
+const TextDiv= styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width:1000px;
+  height: 1000px;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: 300;
+`
+
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 400,
+    },
+  },
+};
+
+const skills = [
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Vue",
+  "Nodejs",
+  "Spring",
+  "Java",
+  "Nextjs",
+  "Nestjs",
+  "Express",
+  "Go",
+  "C",
+  "Python",
+  "Django",
+  "Swift",
+  "Kotlin",
+  "MySQL",
+  "MongoDB",
+  "php",
+  "GraphQl",
+  "Firebase",
+  "ReactNative",
+  "Unity",
+  "Flutter",
+  "AWS",
+  "Kubernetes",
+  "Docker",
+  "Git",
+  "Figma",
+  "Zeplin",
+];
+
 function Write() {
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
   } = useForm({mode:"onChange"});
   const onSubmitValid=(data)=>{
-    console.log(data)
+    Object.assign(data, [skillName])
     reset()
+    console.log(data)
   }
+  const [skillName, setSkillName] = useState([]);
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSkillName(
+      typeof value === 'string' ? value.split(',') : value,
+    );
+  };
   return (
     <>
       <Navbar/>
@@ -139,6 +208,37 @@ function Write() {
           </WriteTitle>
           <SmallTitle>제목</SmallTitle>
           <input {...register("selectname")} type="text" placeholder="글 제목을 입력해주세요"/>
+          <SmallTitle>기술 스택</SmallTitle>
+          <FormControl sx={{ m: 1, width: 400, mt: 3 }}>
+            <Select
+              multiple
+              displayEmpty
+              value={skillName}
+              onChange={handleChange}
+              input={<OutlinedInput />}
+              renderValue={(selected) => {
+                if (selected.length === 0) {
+                  return <em>기술 스택을 선택해주세요</em>;
+                }
+                return selected.join(', ');
+              }}
+              MenuProps={MenuProps}
+              inputProps={{ 'aria-label': 'Without label' }}
+            >
+              <MenuItem disabled value="">
+                <em>기술 스택</em>
+              </MenuItem>
+              {skills.map((skill) => (
+                <MenuItem
+                  key={skill}
+                  value={skill}
+                >
+                  {skill}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <TextDiv>여기는 프로젝트 소개에 대한 글을 적는 공간입니다</TextDiv>
           <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder" }}/>
           </Form>
     </>

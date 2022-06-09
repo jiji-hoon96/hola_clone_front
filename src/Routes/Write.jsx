@@ -7,6 +7,13 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from "react";
+import '@toast-ui/editor/dist/toastui-editor.css';
+import { Editor } from '@toast-ui/react-editor';
+import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
+import "tui-color-picker/dist/tui-color-picker.css";
+import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css"
+import "@toast-ui/editor/dist/i18n/ko-kr";
+
 
 const WriteDiv= styled.div`
   display: flex;
@@ -54,9 +61,6 @@ const Form = styled.form`
       transform: scale(1.09);
     }
   }
-  span {
-    color: red;
-  }
 `;
 const SubmitBtn = styled.input`
   :hover{
@@ -67,18 +71,6 @@ const SubmitBtn = styled.input`
 const SmallTitle = styled.div`
   font-size: 20px;
   font-weight: bold;
-`
-
-const TextDiv= styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  width:1000px;
-  height: 1000px;
-  border-radius: 20px;
-  font-size: 32px;
-  font-weight: 300;
 `
 
 const ITEM_HEIGHT = 48;
@@ -238,7 +230,14 @@ function Write() {
               ))}
             </Select>
           </FormControl>
-          <TextDiv>여기는 프로젝트 소개에 대한 글을 적는 공간입니다</TextDiv>
+          <Editor
+            initialValue="안녕하세요 React Editor입니다"
+            previewStyle="vertical"
+            height="600px"
+            initialEditType="wysiwyg"
+            useCommandShortcut={false}
+            plugins={[colorSyntax]}
+            language="ko-KR"/>
           <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder" }}/>
           </Form>
     </>

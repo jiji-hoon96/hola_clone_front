@@ -13,6 +13,7 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 import "tui-color-picker/dist/tui-color-picker.css";
 import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 import "@toast-ui/editor/dist/i18n/ko-kr";
+import { Link } from "react-router-dom";
 
 
 const WriteDiv= styled.div`
@@ -64,10 +65,30 @@ const Form = styled.form`
 `;
 const SubmitBtn = styled.input`
   :hover{
-    transform: scale(1.1);
+    transform: scale(1.05)
     
   }
 `
+const GoHomeBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding: 1px 6px;
+  margin: 10px 0px 15px 0px;
+  align-items: center;
+  width:150px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 10px;
+  :hover{
+    transform: scale(1.05)
+  }
+`
+const BtnDiv = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 const SmallTitle = styled.div`
   font-size: 20px;
   font-weight: bold;
@@ -240,7 +261,12 @@ function Write() {
             useCommandShortcut={false}
             plugins={[colorSyntax]}
             language="ko-KR"/>
-          <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder" }}/>
+          <BtnDiv>
+            <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder", width: "150px", height:"70px" ,marginRight:"10px"}}/>
+            <Link to={{pathname:"/"}}>
+              <GoHomeBtn>취소</GoHomeBtn>
+            </Link>
+          </BtnDiv>
           </Form>
     </>
   )

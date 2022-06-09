@@ -232,9 +232,10 @@ function Write() {
           </FormControl>
           <Editor
             usageStatistics= {false}
-            initialValue="안녕하세요 React Editor입니다"
+            initialValue="안녕하세요 Oraganization 입니다! 프로젝트에 대해 소개해주세요~!"
             previewStyle="vertical"
-            height="600px"
+            width= "100%"
+            height="700px"
             initialEditType="wysiwyg"
             useCommandShortcut={false}
             plugins={[colorSyntax]}

@@ -22,11 +22,11 @@ const StyledSlider = styled(Slider)`
     align-items: center;
     }
   .slick-arrow.slick-next::before{
-    font-size: 30px;
+    font-size: 40px;
     color: black;
   }
   .slick-arrow.slick-prev::before{
-    font-size: 30px;
+    font-size: 40px;
     color: black;
   }
   .slick-dots{

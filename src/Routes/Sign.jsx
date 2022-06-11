@@ -2,70 +2,35 @@ import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { LoginForm ,LoginModalForm,LoginInputForm} from "../components/Formstyle/Formstyle";
+import {LoginSubmitBtn} from '../components/Btnstyle/Btnstyle'
+import { LoginTitle,SmallLoginTitle } from "../components/Titlestyle/Titlestyle";
 
-const SignForm = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const ModalForm = styled.div`
-width: 500px;
-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-`;
-
-const Form = styled.form`
-  display: flex;
-  font-weight: 100;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  flex-direction: column;
-  input {
-    font-size: 18px;
-    cursor: pointer;
-    margin: 10px;
-    width: 250px;
-    height: 50px;
-    margin: 5px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 100;
-    :focus {
-      font-weight: bolder;
-      transform: scale(1.09);
-    }
+const SignLogo = styled.div`
+ text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #353b48 0%,
+    #273c75 29%,
+    #7f8fa6 67%,
+    #f5f6fa 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 55px;
+  margin: 30px 0px 10px 0px;
+  @keyframes textclip {
+  to {
+    background-position: 200% center;
   }
-  span {
-    color: red;
-  }
-`;
-const SubmitBtn = styled.input`
-  :hover{
-    transform: scale(1.1);
-  }
-`
-
-const SignTitle = styled.div`
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: 25px;
-  font-weight: 600;
-`
-const SmallSignTitle = styled.div`
-   font-size: 20px;
-  font-weight: 600;
-  margin-top: 20px;
+}
 `
 
 function Sign() {
@@ -76,7 +41,6 @@ function Sign() {
     formState: { errors },
   } = useForm({mode:"onChange"});
   const [sign, setSign] = useState("")
-  console.log(sign)
   const onSubmitValid=(data)=>{
     setSign(data)
     reset()
@@ -84,14 +48,14 @@ function Sign() {
   return (
     <>
     <Navbar/>
-    <SignTitle>
+    <LoginTitle>
     Organiztion에 오신 것을 환영합니다!
-    <SmallSignTitle>(회원가입)</SmallSignTitle>
-    </SignTitle>
-    
-      <SignForm>
-        <ModalForm>
-          <Form onSubmit={handleSubmit(onSubmitValid)}>
+    <SmallLoginTitle>(회원가입)</SmallLoginTitle>
+    </LoginTitle>
+      <LoginForm>
+        <LoginModalForm>
+        <SignLogo>Organization</SignLogo>
+          <LoginInputForm onSubmit={handleSubmit(onSubmitValid)}>
               <input
               {...register("username", {
                 required: "아이디를 입력해주세요",
@@ -116,10 +80,10 @@ function Sign() {
               placeholder="비밀번호를 한번 더 입력해주세요"
               />
               <span>{errors.passwordConfirm?.message}</span>
-              <SubmitBtn type="submit" value="회원가입" style={{ fontWeight: "bolder" }}/>
-          </Form>
-        </ModalForm>
-      </SignForm>
+              <LoginSubmitBtn type="submit" value="회원가입" style={{ fontWeight: "bolder" }}/>
+          </LoginInputForm>
+        </LoginModalForm>
+      </LoginForm>
   </>
   )
 }

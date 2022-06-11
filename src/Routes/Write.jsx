@@ -14,16 +14,8 @@ import "tui-color-picker/dist/tui-color-picker.css";
 import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 import "@toast-ui/editor/dist/i18n/ko-kr";
 import { Link } from "react-router-dom";
+import { WriteDiv } from "../components/DivStyle/Divstyle";
 
-
-const WriteDiv= styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-  margin: 30px;
-`
 const WriteTitle = styled.div`
   display: flex;
   justify-content: center;

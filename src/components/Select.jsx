@@ -1,9 +1,7 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  useState } from "react";
-import styled from 'styled-components'
 import dataSkill from './data/dataSkill'
-import { FaFolderOpen,FaBookOpen } from "react-icons/fa";
 import { SelectDiv,ShowDiv,ShowItemDiv,ResultDiv,ResultSelectBtnDiv,SelectBarDiv,ShowSelectListDiv ,ShowSelectListItemDiv} from "./DivStyle/Divstyle";
 import { SelectBtn ,ResetBtn,ResultSelectBtn } from "./Btnstyle/Btnstyle";
 import {ResultBox} from "./Boxstyle/Boxstyle"
@@ -11,14 +9,18 @@ import {ResultBox} from "./Boxstyle/Boxstyle"
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
-    const [selectSubject , setSelectSubject] = useState(false);
+    const [selectSubject , setSelectSubject] = useState(0);
     const [returnitem, setReturnItem] = useState("");
     const newArray= []
     const onResetBtn = () =>{
         setReturnItem("")
     }
-    const onClickSubject= ()=>{
-        setSelectSubject((prev)=>!prev)
+    const onClickSujectPrev=()=>{
+        setSelectSubject(1)
+    }
+
+    const onClickSubjectCur=()=>{
+        setSelectSubject(0)
     }
     localStorage.setItem("skill",returnitem);
     const selectMenuHandler = (index) => {
@@ -78,13 +80,13 @@ function Select(){
         </SelectDiv>
         <ResultDiv>
             <ResultSelectBtnDiv>
-                <ResultSelectBtn onClick={onClickSubject}>
+                <ResultSelectBtn onClick={onClickSubjectCur}>
                     프로젝트
-                    {selectSubject ? <div/> :null}
+                    {selectSubject===0 ? <div/> :null}
                 </ResultSelectBtn>
-                <ResultSelectBtn onClick={onClickSubject}>
+                <ResultSelectBtn onClick={onClickSujectPrev}>
                     스터디 
-                    {selectSubject ?  null:<div/>}
+                    {selectSubject===1 ?  <div/> :null}
                 </ResultSelectBtn>
             </ResultSelectBtnDiv>
             <ResultBox>

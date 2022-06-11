@@ -1,169 +1,38 @@
-import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import { useForm } from "react-hook-form";
+import styled from "styled-components";
 import { useState } from "react";
+import { LoginForm,LoginModalForm } from "../components/Formstyle/Formstyle";
+import { LoginToggleBtn,GoogleBtn,GithubBtn,KaKaoBtn,LoginSubmitBtn } from "../components/Btnstyle/Btnstyle";
+import {LoginToggleDiv,LoginBtnDiv} from '../components/DivStyle/Divstyle'
+import { SmallLoginTitle,SmallTitle,LoginTitle } from "../components/Titlestyle/Titlestyle";
+import {LoginInputForm} from '../components/Formstyle/Formstyle'
 
-const LoginForm = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const ModalForm = styled.div`
-width: 500px;
-height: 650px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-`;
-
-const ToggleDiv= styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height:100px;
-`
-const ToggleBtn = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 14px;
-  width:200px;
-  height:50px;
-  margin: 10px;
-  cursor: pointer;
-  :hover{
-    transform: scale(1.1);
-  }
-  div{
-    width:170px;
-    height:10px;
-    margin-top: 5px;
-    background-color:#F9758F ;
-  }
-`
-
-const BtnDiv = styled.div`
-  border-radius: 10px;
-  display: flex;
-  width:300px;
-  height: 100px;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0px;
-  box-shadow: 2px 2px 2px 2px gray;
-`
-const SmallTitle = styled.div`
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #333232;
-  font-weight: bold;
-
-`
-
-const GoogleBtn = styled.div`
-  width: 200px;
-  height: 66px;
-  background-color: transparent;
-  background-image: url("img/logofile/googleimage.png");
-  background-position: center;
-  background-size: cover;
-  border-radius: 20px;
-  cursor: pointer;
-  margin: 10px 20px;
-  :hover {
-    transform: scale(1.04);
-  }
-`;
-
-const GithubBtn = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background-image: url("img/logofile/gitimage.png");
-  background-position: center;
-  background-color: white;
-  background-size: cover;
-  border-color:white;
-  cursor: pointer;
-  margin: 10px 20px;
+const LoginLogo =styled.div`
+ text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #353b48 0%,
+    #273c75 29%,
+    #7f8fa6 67%,
+    #f5f6fa 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 55px;
   
-  :hover {
-    transform: scale(1.04);
+  @keyframes textclip {
+  to {
+    background-position: 200% center;
   }
-`;
-const KaKaoBtn = styled.div`
-  width: 80px;
-  height: 80px;
-  background-image: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fem7IrN%2Fbtq7snvbsK4%2FEKApcyLKGqBGWr8tmsbkXK%2Fimg.png");
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-  border-radius: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin: 10px 20px;
-  :hover {
-    transform: scale(1.04);
-  }
-`;
-
-
-const Form = styled.form`
-  display: flex;
-  font-weight: 100;
-  justify-content: center;
-  height: 450px;
-  align-items: center;
-  flex-direction: column;
-  input {
-    font-size: 18px;
-    cursor: pointer;
-    width: 250px;
-    height: 50px;
-    margin: 10px;
-    border: 1px solid "#fd8f8c";
-    color: "#fd8f8c";
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 100;
-    color: "#fd8f8c";
-    :focus {
-      
-      font-weight: bolder;
-      transform: scale(1.09);
-      
-    }
-  }
-  span {
-    color: red;
-  }
-`;
-const SubmitBtn = styled.input`
-  :hover{
-    transform: scale(1.1);
-    
-  }
-`
-const LoginTitle = styled.div`
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: 25px;
-  font-weight: 600;
-`
-
-const SmallLoginTitle = styled.div`
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 20px;
+}
 `
 
 function Login() {
@@ -174,7 +43,6 @@ function Login() {
     formState: { errors },
   } = useForm({mode:"onChange"});
   const [login, setLogin] = useState("")
-  console.log(login)
   const [logintoggle,setLoginToggle] =useState(false);
   const onSubmitValid=(data)=>{
     setLogin(data)
@@ -190,34 +58,35 @@ function Login() {
       <SmallLoginTitle>(로그인)</SmallLoginTitle>
       </LoginTitle>
         <LoginForm>
-        <ModalForm>
-          <ToggleDiv>
-            <ToggleBtn onClick={()=>onToggle(true)}>
+        <LoginModalForm>
+          <LoginToggleDiv>
+            <LoginToggleBtn onClick={()=>onToggle(true)}>
               소셜 계정으로 로그인하기
               {logintoggle ? <div/> : null}
-            </ToggleBtn>
-            <ToggleBtn onClick={()=>onToggle(false)}>
+            </LoginToggleBtn>
+            <LoginToggleBtn onClick={()=>onToggle(false)}>
               ID/PW 으로 로그인하기
               {logintoggle ? null:  <div/> }
-            </ToggleBtn>
-          </ToggleDiv>
+            </LoginToggleBtn>
+          </LoginToggleDiv>
           {logintoggle ? 
           <>
-            <BtnDiv style={{backgroundColor:"white"}}>
+            <LoginBtnDiv style={{backgroundColor:"white"}}>
               <GoogleBtn/>
-            </BtnDiv>
+            </LoginBtnDiv>
             <SmallTitle>Google 로그인</SmallTitle>  
-            <BtnDiv style={{backgroundColor:"#1B1F23"}}>
+            <LoginBtnDiv style={{backgroundColor:"#1B1F23"}}>
               <GithubBtn/>
-            </BtnDiv>
+            </LoginBtnDiv>
             <SmallTitle>Github 로그인</SmallTitle>        
-            <BtnDiv  style={{backgroundColor:"#FAE300"}}>
+            <LoginBtnDiv  style={{backgroundColor:"#FAE300"}}>
               <KaKaoBtn/>
-            </BtnDiv>
+            </LoginBtnDiv>
             <SmallTitle>KaKao 로그인</SmallTitle>        
           </> : 
           <>
-          <Form onSubmit={handleSubmit(onSubmitValid)}>
+          <LoginLogo>Organization</LoginLogo> 
+          <LoginInputForm onSubmit={handleSubmit(onSubmitValid)}>
               <input
               {...register("username", {
                  required: "아이디를 입력해주세요",
@@ -234,12 +103,10 @@ function Login() {
               placeholder="비밀번호를 입력해주세요"
               />
               <span>{errors.password?.message}</span>
-              <SubmitBtn type="submit" value="로그인" style={{ fontWeight: "bolder" }}/>
-          </Form>
+              <LoginSubmitBtn type="submit" value="로그인" style={{ fontWeight: "bolder" }}/>
+          </LoginInputForm>
           </>}
-         
-  
-        </ModalForm>
+        </LoginModalForm>
         </LoginForm>
     </>
   )

@@ -163,3 +163,22 @@ export const LoginSubmitBtn = styled.input`
     color:white;
   }
 `
+
+export const GoHomeBtn = styled.div`
+display: flex;
+justify-content: center;
+font-size: 18px;
+padding: 1px 6px;
+margin: 10px 0px 15px 0px;
+align-items: center;
+width:150px;
+height: 70px;
+border: 1px solid black;
+border-radius: 10px;
+background-color: white;
+:hover{
+  transform: scale(1.05);
+    background-color: #353434;
+    color:white;
+}
+`

@@ -15,77 +15,17 @@ import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-sy
 import "@toast-ui/editor/dist/i18n/ko-kr";
 import { Link } from "react-router-dom";
 import { WriteDiv } from "../components/DivStyle/Divstyle";
-
-const WriteTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0px;
-  width:100%;
-  height:100px;
-  font-size: 24px;
-  font-weight: 600;
-  text-decoration-line: underline;
-  text-decoration-style: dashed;
-  text-underline-position : under;
-`
-const Form = styled.form`
-  display: flex;
-  margin-left: 70px;
-  margin-bottom: 30px;
-  font-weight: 100;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  input,select{
-    font-size: 18px;
-    cursor: pointer;
-    width: 400px;
-    height: 60px;
-    margin: 10px 0px 15px 0px;
-    border: 1px solid "#fd8f8c";
-    color: "#fd8f8c";
-    border-radius: 10px;
-    text-align: center;
-    font-weight: 100;
-    color: "#fd8f8c";
-    :focus {
-      font-weight: bolder;
-      transform: scale(1.09);
-    }
-  }
-`;
-const SubmitBtn = styled.input`
-  :hover{
-    transform: scale(1.05)
-    
-  }
-`
-const GoHomeBtn = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  padding: 1px 6px;
-  margin: 10px 0px 15px 0px;
-  align-items: center;
-  width:150px;
-  height: 70px;
-  border: 1px solid black;
-  border-radius: 10px;
-  :hover{
-    transform: scale(1.05)
-  }
-`
-const BtnDiv = styled.div`
-  display: flex;
-  align-items: center;
-`
+import { WriteTitle } from "../components/Titlestyle/Titlestyle";
+import { WriteForm } from "../components/Formstyle/Formstyle";
+import { LoginSubmitBtn } from "../components/Btnstyle/Btnstyle";
+import { GoHomeBtn } from "../components/Btnstyle/Btnstyle";
+import { WriteBtnDiv } from "../components/DivStyle/Divstyle";
+import skills from '../components/data/skillList'
 
 const SmallTitle = styled.div`
   font-size: 20px;
   font-weight: bold;
 `
-
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -97,38 +37,6 @@ const MenuProps = {
   },
 };
 
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Vue",
-  "Nodejs",
-  "Spring",
-  "Java",
-  "Nextjs",
-  "Nestjs",
-  "Express",
-  "Go",
-  "C",
-  "Python",
-  "Django",
-  "Swift",
-  "Kotlin",
-  "MySQL",
-  "MongoDB",
-  "php",
-  "GraphQl",
-  "Firebase",
-  "ReactNative",
-  "Unity",
-  "Flutter",
-  "AWS",
-  "Kubernetes",
-  "Docker",
-  "Git",
-  "Figma",
-  "Zeplin",
-];
 
 function Write() {
   const {
@@ -159,7 +67,7 @@ function Write() {
           프로젝트 기본 정보를 입력해주세요.
           </WriteTitle>
       </WriteDiv>
-      <Form onSubmit={handleSubmit(onSubmitValid)}>
+      <WriteForm onSubmit={handleSubmit(onSubmitValid)}>
           <SmallTitle>모집 구분</SmallTitle>
           <select {...register("selecttitle")}>
             <option value="none" hidden>프로젝트/스터디</option>
@@ -253,13 +161,13 @@ function Write() {
             useCommandShortcut={false}
             plugins={[colorSyntax]}
             language="ko-KR"/>
-          <BtnDiv>
-            <SubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder", width: "150px", height:"70px" ,marginRight:"10px"}}/>
+          <WriteBtnDiv>
+            <LoginSubmitBtn type="submit" value="글 등록" style={{ fontWeight: "bolder", width: "150px", height:"70px" ,marginRight:"10px"}}/>
             <Link to={{pathname:"/"}}>
               <GoHomeBtn>취소</GoHomeBtn>
             </Link>
-          </BtnDiv>
-          </Form>
+          </WriteBtnDiv>
+          </WriteForm>
     </>
   )
 }

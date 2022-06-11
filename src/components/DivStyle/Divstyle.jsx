@@ -181,3 +181,8 @@ export const WriteDiv= styled.div`
   height:100%;
   margin: 30px;
 `
+
+export const WriteBtnDiv = styled.div`
+display: flex;
+align-items: center;
+`

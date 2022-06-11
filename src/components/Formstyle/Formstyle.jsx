@@ -54,3 +54,30 @@ span {
   color: red;
 }
 `;
+
+export const WriteForm = styled.form`
+  display: flex;
+  margin-left: 70px;
+  margin-bottom: 30px;
+  font-weight: 100;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  input,select{
+    font-size: 18px;
+    cursor: pointer;
+    width: 400px;
+    height: 60px;
+    margin: 10px 0px 15px 0px;
+    border: 1px solid "#fd8f8c";
+    color: "#fd8f8c";
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 100;
+    color: "#fd8f8c";
+    :focus {
+      font-weight: bolder;
+      transform: scale(1.09);
+    }
+  }
+`;

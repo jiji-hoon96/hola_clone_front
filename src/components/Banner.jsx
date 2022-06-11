@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import {SiNotion,SiGithub} from 'react-icons/si'
 import "slick-carousel/slick/slick-theme.css";
-import {ImgBox,JobImgBox,OkkyImgBox,RocketImgBox,WantedImgBox} from './Boxstyle/BannerBox'
+import {ImgBox,JobImgBox,OkkyImgBox,RocketImgBox,WantedImgBox} from './Boxstyle/Boxstyle'
 import {BannerSettings} from "./ScreenFunc/BannerFunc"
-import {BannerBtn} from './Btnstyle/BannerBtn'
+import {BannerBtn} from './Btnstyle/Btnstyle'
 import {BannerDiv} from './DivStyle/Divstyle'
 
 const StyledSlider = styled(Slider)`
@@ -14,7 +14,7 @@ const StyledSlider = styled(Slider)`
     justify-content: center;
     align-items: center;
     .slick-list{
-      margin:0px 20px;
+      margin:10px 20px;
     }
     .slick-track {
     display: flex;
@@ -30,7 +30,7 @@ const StyledSlider = styled(Slider)`
     color: black;
   }
   .slick-dots{
-    margin: 10px 0px;
+    margin: 40px 0px 10px 0px;
   }
   .slick-dots li {
     margin: 0 3.5px;
@@ -84,7 +84,9 @@ function Banner (){
                 <ImgBox>
                 <BannerBtn>
                     <a href='https://okky.kr/' rel="noreferrer" target="_blank">
-                        Okky
+                        Okky 
+                        <div/>
+                        (채용 정보)
                     </a>
                 </BannerBtn>
                 <OkkyImgBox/></ImgBox>
@@ -93,7 +95,9 @@ function Banner (){
                 <ImgBox>
                 <BannerBtn>
                     <a href='https://www.rocketpunch.com/' rel="noreferrer" target="_blank">
-                        로켓펀치
+                        Rocket Punch 
+                        <div/>
+                        (채용 정보)
                     </a>
                 </BannerBtn>
                 <RocketImgBox/></ImgBox>
@@ -102,7 +106,9 @@ function Banner (){
                 <ImgBox>
                 <BannerBtn>
                     <a href='https://www.wanted.co.kr/jobsfeed?utm_source=google&utm_medium=sa&utm_campaign=kr_recruit_web_sa_signup_brand&utm_term=%EC%9B%90%ED%8B%B0%EB%93%9C&utm_content=brand&gclid=CjwKCAjw7vuUBhBUEiwAEdu2pILbav9cmZbSGJI-ytJn2bgrt-U8pO3Kt8pxkkgHvTP5sTWUHGzhbRoC27YQAvD_BwE' rel="noreferrer" target="_blank">
-                        원티드
+                        Wanted
+                        <div/>
+                        (채용 정보)
                     </a>
                 </BannerBtn>
                 <WantedImgBox/></ImgBox>
@@ -111,7 +117,9 @@ function Banner (){
                 <ImgBox>
                 <BannerBtn>
                     <a href='https://www.jobplanet.co.kr/job' rel="noreferrer" target="_blank">
-                        잡 플래닛
+                       Job Planet 
+                       <div/>
+                       (채용 정보)
                     </a>
                 </BannerBtn>
                 <JobImgBox/></ImgBox>

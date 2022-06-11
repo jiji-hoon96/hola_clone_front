@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {Link, useLocation} from "react-router-dom";
 import { NavbarRightDiv,Navbardiv } from "./DivStyle/Divstyle";
-import { NavBtn } from "./Btnstyle/NavbarBtn";
+import { NavBtn } from "./Btnstyle/Btnstyle";
 
 const NavLogo =styled.div`
  text-transform: uppercase;

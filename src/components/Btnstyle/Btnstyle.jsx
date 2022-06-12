@@ -49,7 +49,8 @@ export const LoginToggleBtn = styled(BtnShape)`
 `
 
 export const NavBtn = styled(BtnShape)`
-    color:${(props)=>props.theme.fontColor};
+        color:${(props)=>props.theme.fontColor};
+        margin-bottom: 5px;
       :hover{
         transform: scale(1.03);
         div{

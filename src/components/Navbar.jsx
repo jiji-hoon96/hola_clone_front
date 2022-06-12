@@ -2,8 +2,9 @@ import styled from "styled-components";
 import {Link, useLocation} from "react-router-dom";
 import { NavbarRightDiv,Navbardiv } from "./DivStyle/Divstyle";
 import { NavBtn } from "./Btnstyle/Btnstyle";
-import {useSetRecoilState} from 'recoil';
+import {useSetRecoilState,useRecoilValue} from 'recoil';
 import {isDarkAtom} from "../atom"
+import DarkModeToggle from "react-dark-mode-toggle";
 
 const NavLogo =styled.div`
  text-transform: uppercase;
@@ -36,6 +37,7 @@ const NavLogo =styled.div`
 
 function Navbar() {
   const location= useLocation();
+  const DarkAtom = useRecoilValue(isDarkAtom);
   const setDarkAtom = useSetRecoilState(isDarkAtom);
   const toggleDarkAtom = () => setDarkAtom((prev)=>!prev)
   return ( 
@@ -61,7 +63,12 @@ function Navbar() {
             <div/>
             </NavBtn>
           </Link>}
-          <button onClick={toggleDarkAtom}>Toggle Mode</button>
+          <DarkModeToggle
+            onChange={toggleDarkAtom}
+            checked={DarkAtom}
+            size={70}
+            speed={2}
+          />
       </NavbarRightDiv>
     </Navbardiv>
   )

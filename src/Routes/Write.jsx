@@ -24,6 +24,7 @@ import skills from '../components/data/skillList'
 
 const SmallTitle = styled.div`
   font-size: 20px;
+  color: ${(props)=>props.theme.fonColor};
   font-weight: bold;
 `
 const ITEM_HEIGHT = 48;

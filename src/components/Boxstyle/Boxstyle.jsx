@@ -3,9 +3,9 @@ const BoxShape = styled.div`
     cursor: pointer;
     border-radius: 10px;
     background-position: center;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
     background-size: cover;
-    border-color:white;
+    border-color:${(props)=>props.theme.borderColor};
 `
 
 export const ImgBox = styled.div`
@@ -16,7 +16,7 @@ export const ImgBox = styled.div`
     width:100%;
     height: 450px;
     border-radius: 10px;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
 `
 export const OkkyImgBox= styled(BoxShape)`
   width:300px;

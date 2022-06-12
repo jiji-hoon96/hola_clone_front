@@ -15,16 +15,16 @@ const LoginShape = styled.div`
   background-repeat: none;
   background-size: cover;
   border-radius: 20px;
-  background-color: white;
+  background-color: ${(props)=>props.theme.bgColor};
 `
 
-
 export const SelectBtn = styled(BtnShape)`
+    color:${(props)=>props.theme.fontColor};
     :hover{
         transform: scale(1.03);
     }
     div{
-        background-color: #353434;
+        background-color: ${(props)=>props.theme.underLineColor};
         width:100%;
         margin-top: 5px;
         height:5px;
@@ -35,6 +35,7 @@ export const SelectBtn = styled(BtnShape)`
 `
 export const LoginToggleBtn = styled(BtnShape)`
     width:230px;
+    color:${(props)=>props.theme.fontColor};
     height:60px;
     margin: 0px 10px;
     :hover{
@@ -43,15 +44,16 @@ export const LoginToggleBtn = styled(BtnShape)`
     div{
         height:5px;
         margin-top: 5px;
-        background-color: #353434;
+        background-color: ${(props)=>props.theme.underLineColor};
     }
 `
 
 export const NavBtn = styled(BtnShape)`
+    color:${(props)=>props.theme.fontColor};
       :hover{
         transform: scale(1.03);
         div{
-            background-color: #353434;
+            background-color: ${(props)=>props.theme.underLineColor};
             width:100%;
             height:5px;
             margin-top: 5px;
@@ -65,7 +67,7 @@ export const NavBtn = styled(BtnShape)`
 export const BannerBtn = styled.div`
     width: 250px;
     height:250px;
-    background-color: #F6F6F6;
+    background-color: ${(props)=>props.theme.bannerBtnColor};
     border: none;
     text-align: center;
     margin-right: 30px;
@@ -75,12 +77,13 @@ export const BannerBtn = styled.div`
     font-size: 24px;
     font-weight: 500;
     border-radius: 50%;
+    color:${(props)=>props.theme.fontColor};
     cursor: pointer;
     line-height: 40px;
     :hover{
         transform: scale(1.05); 
         transition-duration: 0.5s;
-        background-color: grey;
+        background-color: ${(props)=>props.theme.bannerHover};
     }
 `
 
@@ -96,7 +99,7 @@ export const PopupSubmitBtn = styled.input`
 `
 
 export const ResetBtn =styled.div`
-    background-color: red;
+    background-color: ${(props)=>props.theme.reset};
     color:white;
     width:150px;
     height:70px;
@@ -123,7 +126,7 @@ export const ResultSelectBtn =styled.div`
         transform: scale(1.1);
     }
     div{
-            background-color: #353434;
+            background-color: ${(props)=>props.theme.underLineColor};
             width:100%;
             height:5px;
             margin-top: 5px;
@@ -156,12 +159,14 @@ export const KaKaoBtn = styled(LoginShape)`
 `;
 
 export const LoginSubmitBtn = styled.input`
-    background-color: white;
-  :hover{
-    transform: scale(1.05);
-    background-color: #353434;
-    color:white;
-  }
+    color: ${(props)=>props.theme.fontColor};
+    border:  1px solid  ${(props)=>props.theme.fontColor};
+    background-color: ${(props)=>props.theme.submitBtnColor};
+    :hover{
+        transform: scale(1.05);
+        background-color: ${(props)=>props.theme.underLineColor};
+        color:${(props)=>props.theme.boxFontHoverColor}
+    }
 `
 
 export const GoHomeBtn = styled.div`
@@ -173,12 +178,12 @@ margin: 10px 0px 15px 0px;
 align-items: center;
 width:150px;
 height: 70px;
-border: 1px solid black;
+border: 1px solid ${(props)=>props.theme.underLineColor};
 border-radius: 10px;
-background-color: white;
+background-color: ${(props)=>props.theme.bgColor};
 :hover{
-  transform: scale(1.05);
-    background-color: #353434;
-    color:white;
+    transform: scale(1.05);
+    background-color: ${(props)=>props.theme.underLineColor};
+    color:${(props)=>props.theme.boxFontHoverColor}
 }
 `

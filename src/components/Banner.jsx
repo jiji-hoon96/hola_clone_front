@@ -23,11 +23,11 @@ const StyledSlider = styled(Slider)`
     }
   .slick-arrow.slick-next::before{
     font-size: 40px;
-    color: black;
+    color: ${(props)=>props.theme.fontColor};
   }
   .slick-arrow.slick-prev::before{
     font-size: 40px;
-    color: black;
+    color: ${(props)=>props.theme.fontColor};
   }
   .slick-dots{
     margin: 40px 0px 10px 0px;
@@ -44,11 +44,11 @@ const StyledSlider = styled(Slider)`
   .slick-dots li button:before {
     width: 6px;
     height: 6px;
-    color: black;
+    color: ${(props)=>props.theme.fontColor};
   }
 
   .slick-dots li.slick-active button:before {
-    color: black !important;
+    color: ${(props)=>props.theme.fontColor} !important;
   }
 
   li {

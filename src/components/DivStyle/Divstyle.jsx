@@ -9,7 +9,7 @@ export const BannerDiv = styled.div`
 
 export const NavbarRightDiv = styled.div`
   margin-left: 200px;
-  width:300px;
+  width:400px;
   height:50px;
   display: flex;
   justify-content: flex-end;
@@ -25,8 +25,8 @@ export const Navbardiv = styled.div`
   z-index: 2;
   height: 110px;
   min-height: 70px;
-  background-color: #F6F6F6;
-  box-shadow: 0 0.125rem 0.25rem 0 rgb(0 0 0 / 11%);
+  background-color: ${(props)=>props.theme.bgColor};
+  box-shadow:${(props)=>props.theme.nav};
 `
 
 export const PopUpDiv= styled.div`
@@ -37,7 +37,7 @@ export const PopUpDiv= styled.div`
     width:100px;
     height:100px;
     border-radius: 50%;
-    background-color: #353b48;
+    background-color: ${(props)=>props.theme.underLineColor};
     left:20px;
     bottom: 20px;   
     cursor: pointer;
@@ -49,7 +49,7 @@ export const PopUpDiv= styled.div`
 export const SelectDiv= styled.div`
     width:100%;
     height:100%;
-    background-color: #F6F6F6;
+    background-color: ${(props)=>props.theme.bgColor};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,8 @@ export const ShowDiv = styled.ul`
     height:100%;
     font-size: 24px;
     color:black;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
+    color:${(props)=>props.theme.fontColor};
     border-radius: 10px;
     margin:20px;
     justify-content: center;
@@ -77,19 +78,19 @@ justify-content: center;
 width:150px;
 height:50px;
 margin: 5px;
-border: 1px solid grey;
+border: 1px solid ${(props)=>props.theme.underLineColor};
 border-radius: 10px;
 :hover{
     cursor: pointer;
     transform: scale(1.05);
-    background-color: #b1acac;
-    color:white;
+    background-color: ${(props)=>props.theme.bannerHover};
+    color:${(props)=>props.theme.boxFontHoverColor};
 }
 `
 
 export const ResultDiv =styled.div`
     height:100%;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -101,7 +102,7 @@ export const ResultSelectBtnDiv= styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F6F6F6;
+    background-color: ${(props)=>props.theme.bannerBtnColor};
     width:500px;
     height:100px;
     margin:20px;
@@ -114,7 +115,7 @@ export const SelectBarDiv = styled.div`
     margin: 15px 0px;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
     border-radius: 10px;
 `
 
@@ -125,9 +126,10 @@ column-gap: 20px;
 justify-content: center;
 align-items: center;
 width: 800px;
-background-color: white;
+background-color: ${(props)=>props.theme.bgColor};
 border-radius: 10px;
 height: 200px;
+color:${(props)=>props.theme.fontColor};
 margin-bottom: 20px;
 `
 
@@ -140,14 +142,14 @@ export const ShowSelectListItemDiv = styled.div`
     align-items: center;
     margin: 0px 5px 0px 0px;
     border-radius: 10px;
-    background-color:  white;
-    color:black;
-    border: 1px solid black;
+    background-color: ${(props)=>props.theme.bgColor};
+    color:${(props)=>props.theme.fontColor};
+    border: 1px solid ${(props)=>props.theme.fontColor};
     :hover{
         cursor: pointer;
         transform: scale(1.05);
-        background-color: #b1acac;
-        color: black;
+        background-color: ${(props)=>props.theme.bannerHover};
+        color:${(props)=>props.theme.fontColor};
     }
 `
 

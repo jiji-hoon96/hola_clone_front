@@ -2,11 +2,13 @@ import styled from "styled-components";
 import {Link, useLocation} from "react-router-dom";
 import { NavbarRightDiv,Navbardiv } from "./DivStyle/Divstyle";
 import { NavBtn } from "./Btnstyle/Btnstyle";
+import {useSetRecoilState} from 'recoil';
+import {isDarkAtom} from "../atom"
 
 const NavLogo =styled.div`
  text-transform: uppercase;
   background-image: linear-gradient(
-    -225deg,
+    -225deg, 
     #353b48 0%,
     #273c75 29%,
     #7f8fa6 67%,
@@ -15,7 +17,6 @@ const NavLogo =styled.div`
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
-  color: #fff;
   :hover{
     transform: scale(1.05);
     transition-duration: 1s;
@@ -35,7 +36,9 @@ const NavLogo =styled.div`
 
 function Navbar() {
   const location= useLocation();
-  return (
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev)=>!prev)
+  return ( 
     <Navbardiv>
       <Link to={{pathname:"/"}}>
         <NavLogo>Organization</NavLogo> 
@@ -58,6 +61,7 @@ function Navbar() {
             <div/>
             </NavBtn>
           </Link>}
+          <button onClick={toggleDarkAtom}>Toggle Mode</button>
       </NavbarRightDiv>
     </Navbardiv>
   )

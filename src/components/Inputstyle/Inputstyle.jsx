@@ -8,6 +8,7 @@ export const PopupSubmitInput = styled.input`
     margin: 5px;
     border-radius: 10px;
     text-align: center;
+    color: ${(props)=>props.theme.fontColor};
     font-weight: 100;
     margin-right: 15px;
     :focus {

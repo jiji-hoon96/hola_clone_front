@@ -19,10 +19,11 @@ width: 500px;
 height: 650px;
   display: flex;
   flex-direction: column;
+  color: ${(props)=>props.theme.fontColor};
   justify-content: center;
   align-items: center;
   margin: 20px;
-  border: 1px solid black;
+  border: 1px solid ${(props)=>props.theme.fontColor};
   border-radius: 10px;
 `;
 
@@ -31,6 +32,7 @@ display: flex;
 font-weight: 100;
 justify-content: center;
 height: 400px;
+color: ${(props)=>props.theme.fontColor};
 align-items: center;
 flex-direction: column;
 input {
@@ -40,6 +42,7 @@ input {
   height: 50px;
   margin: 10px;
   margin-bottom: 20px;
+  color: ${(props)=>props.theme.fontColor};
   border-radius: 10px;
   text-align: center;
   font-weight: 100;
@@ -51,7 +54,7 @@ input {
 span {
   font-weight: bold;
   font-size:18px;
-  color: red;
+  color:${(props)=>props.theme.reset};
 }
 `;
 
@@ -61,23 +64,28 @@ export const WriteForm = styled.form`
   margin-bottom: 30px;
   font-weight: 100;
   justify-content: center;
+  color: ${(props)=>props.theme.fontColor};
   align-items: center;
   flex-direction: column;
   input,select{
     font-size: 18px;
     cursor: pointer;
     width: 400px;
+    color: ${(props)=>props.theme.fontColor};
+    background-color:  ${(props)=>props.theme.submitBtnColor};
+    border: 1px solid  ${(props)=>props.theme.fontColor};
     height: 60px;
     margin: 10px 0px 15px 0px;
-    border: 1px solid "#fd8f8c";
-    color: "#fd8f8c";
     border-radius: 10px;
     text-align: center;
     font-weight: 100;
-    color: "#fd8f8c";
     :focus {
       font-weight: bolder;
       transform: scale(1.09);
     }
+  }
+  option{
+    color: ${(props)=>props.theme.fontColor};
+    background-color:  ${(props)=>props.theme.submitBtnColor};
   }
 `;

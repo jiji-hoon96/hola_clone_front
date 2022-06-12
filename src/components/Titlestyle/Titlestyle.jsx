@@ -12,14 +12,14 @@ export const PopupSubTitle= styled.div`
 width:400px;
 height: 50px;
 font-size: 12px;
-color: grey;
+color: ${(props)=>props.theme.bannerHover};
 font-weight: 300;
 `
 
 export const SmallTitle = styled.div`
   font-size: 18px;
   margin-bottom: 10px;
-  color: #333232;
+  color: ${(props)=>props.theme.underLineColor};
   font-weight: bold;
 `
 export const LoginTitle = styled.div`
@@ -30,6 +30,7 @@ export const LoginTitle = styled.div`
   align-items: center;
   font-size: 25px;
   font-weight: 600;
+  color: ${(props)=>props.theme.fontColor}
 `
 
 export const SmallLoginTitle = styled.div`
@@ -44,6 +45,7 @@ align-items: center;
 margin: 20px 0px;
 width:100%;
 height:100px;
+color: ${(props)=>props.theme.fontColor};
 font-size: 24px;
 font-weight: 600;
 text-decoration-line: underline;

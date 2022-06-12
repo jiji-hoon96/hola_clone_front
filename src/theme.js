@@ -9,6 +9,7 @@ export const darkTheme = {
   bannerHover: "grey",
   reset: "red",
   nav: " 0 0.125rem 0.25rem 0 rgb(80  80 80 / 80%)",
+  logo: "linear-gradient(-225deg,#fbc531 0%,#e84118 29%,#9c88ff 67%, #00a8ff 100%);",
 };
 
 export const lightTheme = {
@@ -22,4 +23,5 @@ export const lightTheme = {
   bannerHover: "grey",
   reset: "orangered",
   nav: " 0 0.125rem 0.25rem 0 rgb(0 0 0 / 30%)",
+  logo: "linear-gradient(-225deg,#353b48 0%,#273c75 29%,#7f8fa6 67%,  #f5f6fa 100%);",
 };

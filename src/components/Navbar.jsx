@@ -8,13 +8,7 @@ import DarkModeToggle from "react-dark-mode-toggle";
 
 const NavLogo =styled.div`
  text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg, 
-    #353b48 0%,
-    #273c75 29%,
-    #7f8fa6 67%,
-    #f5f6fa 100%
-  );
+  background-image: ${(props)=>props.theme.logo};
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;

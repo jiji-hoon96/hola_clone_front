@@ -54,15 +54,15 @@ export const SelectDiv= styled.div`
 
 export const ShowDiv = styled.ul`
     display: flex;
+    gap: 5px;
+    width:62%;
     flex-wrap: wrap;
-    width:1000px;
-    height:100%;
     font-size: 24px;
     color:black;
     background-color: ${(props)=>props.theme.bgColor};
     color:${(props)=>props.theme.fontColor};
     border-radius: 10px;
-    margin:20px;
+    margin: 20px 100px;
     justify-content: center;
     align-items: center;
 `
@@ -71,7 +71,7 @@ export const ShowItemDiv= styled.li`
 display: flex;
 align-items: center;
 justify-content: center;
-width:150px;
+width:160px;
 height:50px;
 margin: 5px;
 border: 1px solid ${(props)=>props.theme.underLineColor};
@@ -116,35 +116,32 @@ export const SelectBarDiv = styled.div`
 `
 
 export const ShowSelectListDiv = styled.div`
-display: flex;
-flex-wrap: wrap;
-column-gap: 20px;
-justify-content: center;
-align-items: center;
-width: 800px;
-background-color: ${(props)=>props.theme.bgColor};
-border-radius: 10px;
-height: 200px;
-color:${(props)=>props.theme.fontColor};
-margin-bottom: 20px;
+    display: flex;
+    gap: 5px;
+    width:50%;
+    flex-wrap: wrap;
+    margin : 20px 0px 20px 80px;
+    background-color: ${(props)=>props.theme.bgColor};
+    border-radius: 10px;
+    color:${(props)=>props.theme.fontColor};
 `
 
 export const ShowSelectListItemDiv = styled.div`
     font-size: 24px;
-    width: 150px;
+    width: 160px;
     height:50px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0px 5px 0px 0px;
     border-radius: 10px;
-    background-color: ${(props)=>props.theme.bgColor};
+    background-color: ${(props)=>props.theme.bannerHover};
     color:${(props)=>props.theme.fontColor};
     border: 1px solid ${(props)=>props.theme.fontColor};
     :hover{
         cursor: pointer;
         transform: scale(1.05);
-        background-color: ${(props)=>props.theme.bannerHover};
+        background-color: ${(props)=>props.theme.bgColor};
         color:${(props)=>props.theme.fontColor};
     }
 `

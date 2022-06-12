@@ -14,6 +14,7 @@ const ProjectDiv = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px solid ${(props)=>props.theme.underLineColor};
 `
 const ProjectDayTitle =styled.div`
     font-size: 16px;

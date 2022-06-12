@@ -36,9 +36,9 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
-  min-width: 800px;
+  
   background-color: ${(props)=>props.theme.bgColor};
-  width:100%;
+  
   font-family: 'Source Sans Pro', sans-serif;
 }
 menu, ol, ul {

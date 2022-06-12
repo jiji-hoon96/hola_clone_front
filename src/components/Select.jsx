@@ -115,7 +115,7 @@ function Select(){
                 <>
                     {projectData.map((project)=> {
                         return (
-                            <ProjectDiv>
+                            <ProjectDiv key={Math.random()}>
                                 <ProjectDayTitle>
                                     {project.year}
                                 </ProjectDayTitle>
@@ -132,7 +132,7 @@ function Select(){
                 <>
                     {studyData.map((study)=> {
                         return (
-                            <ProjectDiv>
+                            <ProjectDiv key={Math.random()}>
                                 <ProjectDayTitle>
                                     {study.year}
                                 </ProjectDayTitle>

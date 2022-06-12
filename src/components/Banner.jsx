@@ -1,18 +1,16 @@
 import styled from 'styled-components'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import {SiNotion,SiGithub} from 'react-icons/si'
 import "slick-carousel/slick/slick-theme.css";
-import {ImgBox,JobImgBox,OkkyImgBox,RocketImgBox,WantedImgBox} from './Boxstyle/Boxstyle'
+import {GitImgBox, ImgBox,JobImgBox,NotionImgBox,OkkyImgBox,RocketImgBox,WantedImgBox} from './Boxstyle/Boxstyle'
 import {BannerSettings} from "./ScreenFunc/BannerFunc"
 import {BannerBtn} from './Btnstyle/Btnstyle'
 import {BannerDiv} from './DivStyle/Divstyle'
 
 const StyledSlider = styled(Slider)`
-    margin: 0px 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .slick-slider{
+      width:60%;
+    }
     .slick-list{
       margin:10px 20px;
     }
@@ -20,15 +18,8 @@ const StyledSlider = styled(Slider)`
     display: flex;
     justify-content: center;
     align-items: center;
+
     }
-  .slick-arrow.slick-next::before{
-    font-size: 40px;
-    color: ${(props)=>props.theme.fontColor};
-  }
-  .slick-arrow.slick-prev::before{
-    font-size: 40px;
-    color: ${(props)=>props.theme.fontColor};
-  }
   .slick-dots{
     margin: 40px 0px 10px 0px;
   }
@@ -67,7 +58,7 @@ function Banner (){
                     Organization Notion   
                   </a>
                 </BannerBtn>
-                <SiNotion size="300"/>
+                <NotionImgBox/>
               </ImgBox> 
             </BannerDiv>
             <BannerDiv>
@@ -77,7 +68,7 @@ function Banner (){
                         Organization Git
                     </a>
                 </BannerBtn>
-                <SiGithub size="300"/>
+                <GitImgBox/>
                 </ImgBox>
             </BannerDiv>
             <BannerDiv>

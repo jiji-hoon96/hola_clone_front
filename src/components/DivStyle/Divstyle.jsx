@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 
 export const BannerDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;   
+
 `
 
 export const NavbarRightDiv = styled.div`
   margin-left: 200px;
-  width:400px;
   height:50px;
   display: flex;
   justify-content: flex-end;

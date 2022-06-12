@@ -5,7 +5,28 @@ import dataSkill from './data/dataSkill'
 import { SelectDiv,ShowDiv,ShowItemDiv,ResultDiv,ResultSelectBtnDiv,SelectBarDiv,ShowSelectListDiv ,ShowSelectListItemDiv} from "./DivStyle/Divstyle";
 import { SelectBtn ,ResetBtn,ResultSelectBtn } from "./Btnstyle/Btnstyle";
 import {ResultBox} from "./Boxstyle/Boxstyle"
+import { projectData } from "./data/projectData";
+import styled from "styled-components";
+import { studyData } from "./data/studyData";
 
+const ProjectDiv = styled.div`
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`
+const ProjectDayTitle =styled.div`
+    font-size: 16px;
+`
+const ProjectTitle =styled.div`
+    font-size: 20px;
+`
+const ProjectTagTitle =styled.div`
+    font-size:16px;
+`
+const ProjectSkillDiv =styled.div`
+    
+`
 
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
@@ -90,7 +111,43 @@ function Select(){
                 </ResultSelectBtn>
             </ResultSelectBtnDiv>
             <ResultBox>
-
+                {selectSubject ===0 ? 
+                <>
+                    {projectData.map((project)=> {
+                        return (
+                            <ProjectDiv>
+                                <ProjectDayTitle>
+                                    {project.year}
+                                </ProjectDayTitle>
+                                <ProjectTitle>
+                                    {project.title}
+                                </ProjectTitle>
+                                <ProjectTagTitle>
+                                    {project.tag}
+                                </ProjectTagTitle>
+                            </ProjectDiv>
+                        )
+                    })}
+                </>:
+                <>
+                    {studyData.map((study)=> {
+                        return (
+                            <ProjectDiv>
+                                <ProjectDayTitle>
+                                    {study.year}
+                                </ProjectDayTitle>
+                                <ProjectTitle>
+                                    {study.title}
+                                </ProjectTitle>
+                                <ProjectTagTitle>
+                                    {study.tag}
+                                </ProjectTagTitle>
+                            </ProjectDiv>
+                        )
+                    })}
+                </>
+                }
+                
             </ResultBox>
         </ResultDiv>
         </>

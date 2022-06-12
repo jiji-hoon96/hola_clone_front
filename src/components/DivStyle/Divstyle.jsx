@@ -169,15 +169,14 @@ export const LoginBtnDiv = styled.div`
   }
 `
 export const WriteDiv= styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  height:100%;
-  margin: 30px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 30px;
 `
 
 export const WriteBtnDiv = styled.div`
-display: flex;
-align-items: center;
+    
+    
+
 `

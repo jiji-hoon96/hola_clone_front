@@ -64,9 +64,10 @@ export const WriteForm = styled.form`
   margin-bottom: 30px;
   font-weight: 100;
   justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
   color: ${(props)=>props.theme.fontColor};
-  align-items: center;
-  flex-direction: column;
+  
   input,select{
     font-size: 18px;
     cursor: pointer;

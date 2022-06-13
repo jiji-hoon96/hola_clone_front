@@ -24,7 +24,7 @@ import skills from '../components/data/skillList'
 
 const SmallTitle = styled.div`
   font-size: 20px;
-  margin:20px;
+  margin:20 0px 30px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,6 +32,14 @@ const SmallTitle = styled.div`
   color: ${(props)=>props.theme.fonColor};
   font-weight: bold;
 `
+
+const ColumnDiv =styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
+
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -69,12 +77,12 @@ function Write() {
       <Navbar/>
       <WriteDiv>
         <WriteTitle>
-          <RiNumber1 style={{backgroundColor:"orangered" ,borderRadius:"50%", width:"30px",height:"30px",padding:"5px", marginRight:"5px"}}/>
+          <RiNumber1 style={{backgroundColor:"orangered" ,borderRadius:"50%", width:"30px",height:"30px",padding:"5px", marginRight:"10px"}}/>
           프로젝트 기본 정보를 입력해주세요.
           </WriteTitle>
           <WriteForm onSubmit={handleSubmit(onSubmitValid)}>
             <SmallTitle>모집 구분
-              <select {...register("selecttitle")}>
+                <select {...register("selecttitle")}>
                 <option value="none" hidden>프로젝트/스터디</option>
                 <option value="프로젝트">프로젝트</option>
                 <option value="스터디">스터디</option>
@@ -82,7 +90,7 @@ function Write() {
             </SmallTitle>
             <SmallTitle>모집 인원
               <select {...register("selectperson")}>
-              <option value="none" hidden>미정 ~ 10명이상</option>
+                <option value="none" hidden>미정 ~ 10명이상</option>
                 <option value="1명">1명</option>
                 <option value="2명">2명</option>
                 <option value="3명">3명</option>
@@ -126,13 +134,6 @@ function Write() {
                 <option value="GoogleForm">GoogleForm</option>
               </select>
             </SmallTitle>
-            <WriteTitle>
-            <RiNumber2 style={{backgroundColor:"orangered" ,borderRadius:"50%", width:"30px",height:"30px",padding:"5px", marginRight:"5px"}}/>
-            프로젝트에 대해 소개해주세요.
-            </WriteTitle>
-            <SmallTitle>제목
-              <input {...register("selectname")} type="text" placeholder="글 제목을 입력해주세요"/>
-            </SmallTitle>
             <SmallTitle>기술 스택
               <FormControl sx={{ m: 1, width: 400, mt: 3 }}>
                 <Select
@@ -164,6 +165,17 @@ function Write() {
                 </Select>
               </FormControl>
             </SmallTitle>
+            <SmallTitle>오픈 방 링크
+              <input {...register("selectlink")} type="text" placeholder="링크를 입력해주세요"/>
+            </SmallTitle>
+          <ColumnDiv>
+            <WriteTitle>
+            <RiNumber2 style={{backgroundColor:"orangered" ,borderRadius:"50%", width:"30px",height:"30px",padding:"5px", marginRight:"10px"}}/>
+            프로젝트에 대해 소개해주세요.
+            </WriteTitle>
+            <SmallTitle>제목
+              <input {...register("selectname")} type="text" placeholder="글 제목을 입력해주세요"/>
+            </SmallTitle>
             <Editor
               usageStatistics= {false}
               initialValue="안녕하세요 Oraganization 입니다! 프로젝트에 대해 소개해주세요~!"
@@ -180,6 +192,7 @@ function Write() {
                 <GoHomeBtn>취소</GoHomeBtn>
               </Link>
             </WriteBtnDiv>
+          </ColumnDiv>
           </WriteForm>
       </WriteDiv>
     </>

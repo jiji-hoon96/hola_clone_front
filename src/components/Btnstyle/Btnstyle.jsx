@@ -175,11 +175,11 @@ display: flex;
 justify-content: center;
 font-size: 18px;
 padding: 1px 6px;
-margin: 10px 0px 15px 0px;
+margin: 25px 0px 15px 0px;
 align-items: center;
 width:150px;
 height: 70px;
-border: 1px solid ${(props)=>props.theme.underLineColor};
+border: 1px solid #dcdde1;
 border-radius: 10px;
 background-color: ${(props)=>props.theme.bgColor};
 :hover{

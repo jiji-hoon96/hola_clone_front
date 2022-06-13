@@ -176,7 +176,8 @@ export const WriteDiv= styled.div`
 `
 
 export const WriteBtnDiv = styled.div`
-    
+    display: flex;
+    align-items: center;
     
 
 `

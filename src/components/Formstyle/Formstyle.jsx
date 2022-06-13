@@ -67,26 +67,23 @@ export const WriteForm = styled.form`
   gap: 5px;
   flex-wrap: wrap;
   color: ${(props)=>props.theme.fontColor};
-  
   input,select{
     font-size: 18px;
     cursor: pointer;
     width: 400px;
     color: ${(props)=>props.theme.fontColor};
     background-color:  ${(props)=>props.theme.submitBtnColor};
-    border: 1px solid  ${(props)=>props.theme.fontColor};
+    border: 1px solid #dcdde1;
     height: 60px;
-    margin: 10px 0px 15px 0px;
+    margin: 30px 10px 15px 0px;
     border-radius: 10px;
     text-align: center;
     font-weight: 100;
     :focus {
-      font-weight: bolder;
-      transform: scale(1.09);
+      transform: scale(1.05);
     }
   }
   option{
     color: ${(props)=>props.theme.fontColor};
-    background-color:  ${(props)=>props.theme.submitBtnColor};
   }
 `;

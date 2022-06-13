@@ -8,6 +8,8 @@ export const studyData = [
     write: "세종대왕",
     view: "30",
     comment: "0",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
   },
   {
     id: 2,
@@ -18,6 +20,8 @@ export const studyData = [
     write: "광개토대왕",
     view: "100123",
     comment: "1230",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
   },
   {
     id: 3,
@@ -28,5 +32,55 @@ export const studyData = [
     write: "제갈공명",
     view: "111111",
     comment: "22",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
+  },
+  {
+    id: 2,
+    year: "1999.02.11",
+    title: "백앤드 스터디하실분~~",
+    tag: ["#온라인", "#4명", "#12개월"],
+    skills: ["ㅋㅋㅋ", "푸하하", "node"],
+    write: "광개토대왕",
+    view: "100123",
+    comment: "1230",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
+  },
+  {
+    id: 3,
+    year: "2222.12.23",
+    title: "Front end 스터디 구해요~!!~",
+    tag: ["#오프라인", "#1231명", "#1초"],
+    skills: ["bootstrap", "hahah", "node"],
+    write: "제갈공명",
+    view: "111111",
+    comment: "22",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
+  },
+  {
+    id: 4,
+    year: "1999.02.11",
+    title: "과자먹고싶다~~",
+    tag: ["#오프라인", "#4명", "#12개월"],
+    skills: ["ㅋㅋㅋ", "푸하하", "node"],
+    write: "보고싶으",
+    view: "100123",
+    comment: "1230",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
+  },
+  {
+    id: 5,
+    year: "2222.12.23",
+    title: "계곡가고싶다 ㅠ!!~",
+    tag: ["#계곡", "#1231명", "#1초"],
+    skills: ["bootstrap", "hahah", "node"],
+    write: "ㄱ꼐곡",
+    view: "123",
+    comment: "22",
+    url:
+      Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2),
   },
 ];

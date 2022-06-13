@@ -52,6 +52,7 @@ export const JobImgBox= styled(BoxShape)`
 
 export const ResultBox= styled.div`
     display: flex;
+    justify-content: center;
     grid-gap: 35px;
     gap: 35px;
     flex-wrap: wrap;

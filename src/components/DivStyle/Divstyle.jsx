@@ -128,7 +128,7 @@ export const ShowSelectListDiv = styled.div`
 
 export const ShowSelectListItemDiv = styled.div`
     font-size: 24px;
-    width: 160px;
+    width: 170px;
     height:50px;
     display: flex;
     justify-content: center;
@@ -178,6 +178,39 @@ export const WriteDiv= styled.div`
 export const WriteBtnDiv = styled.div`
     display: flex;
     align-items: center;
-    
+`
 
+export const ProjectDiv = styled.div`
+    display:flex;
+    justify-content: center;
+    width:400px;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #dcdde1;
+    border-radius: 10px;
+    padding: 50px 10px;
+    cursor: pointer;
+    :hover{
+        transform: scale(1.05);
+    }
+`
+export const ProjectSkillDiv =styled.div`
+    margin:3px;
+    color: #9c9c9e;
+`
+export const ProjectUnderLine = styled.div`
+    width: 70%;
+    margin: 10px 0px;
+    height:3px;
+    background-color: #9c9c9e;;
+`
+export const ProjectUnderDiv = styled.div`
+    display: flex;
+    align-items: center;
+`
+
+export const ProjectSeperate = styled.div`
+    margin:0px 10px;
+    display: flex;
+    color: ${(props)=>props.theme.fontColor};
 `

@@ -30,7 +30,7 @@ export const LoginTitle = styled.div`
   align-items: center;
   font-size: 25px;
   font-weight: 600;
-  color: ${(props)=>props.theme.fontColor}
+  color: ${(props)=>props.theme.fontColor};
 `
 
 export const SmallLoginTitle = styled.div`
@@ -51,4 +51,19 @@ font-weight: 600;
 text-decoration-line: underline;
 text-decoration-style: dashed;
 text-underline-position : under;
+`
+
+export const ProjectDayTitle =styled.div`
+    font-size: 16px;
+    color: #9c9c9e;
+    margin:15px 10px;
+`
+export const ProjectTitle =styled.div`
+    font-size: 20px;
+    color: ${(props)=>props.theme.fontColor};
+`
+export const ProjectTagTitle =styled.div`
+    font-size:16px;
+    margin:15px 10px;
+    color: #9c9c9e;
 `

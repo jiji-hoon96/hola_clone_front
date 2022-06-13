@@ -1,7 +1,9 @@
-import { useLocation, useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
 import { ProjectUnderLine } from "../components/DivStyle/Divstyle";
+import { useState } from "react";
 
 const InfoDiv =styled.div`
     display: flex;
@@ -76,7 +78,67 @@ const InfoExplanationSubtitle=styled.div`
     line-height: 60px;
 `
 
+const InfoCommentForm = styled.form`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+`
+
+const InfoCommentInputText = styled.input`
+    border-radius: 20px;
+    padding: 20px;
+    width:800px;
+    height: 150px;
+    font-size: 24px;
+    margin : 20px 0px;
+`
+const InfoCommentInputSubmit =styled.input`
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    padding: 1px 6px;
+    margin: 25px 0px 15px 0px;
+    align-items: center;
+    width:150px;
+    height: 70px;
+    border: 1px solid #dcdde1;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: ${(props)=>props.theme.bgColor};
+    :hover{
+        transform: scale(1.05);
+        background-color: ${(props)=>props.theme.underLineColor};
+        color:${(props)=>props.theme.boxFontHoverColor}
+}
+`
+
+const CommentList =styled.div`
+    width:1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+`
+
+const CommentListitem= styled.div`
+    font-size: 24px;
+`
+
 export function Info(){
+    const {
+        register,
+        handleSubmit,
+        reset,
+      } = useForm({mode:"onChange"});
+    const [commentlist,setCommentlist] = useState([]);
+    const onSubmitValid=(data)=>{
+        setCommentlist([...commentlist,data])
+        reset()
+    }
     const location = useLocation();
     const projectlist = location.state?.project
     const studylist = location.state?.study
@@ -129,9 +191,22 @@ export function Info(){
                 </InfoExplanationDiv>
                 <ProjectUnderLine style={{margin:"60px 0px 40px 0px"}}/>
                 <InfoExplanationDiv>
-                    <InfoExplanationTitle>댓글</InfoExplanationTitle>
-                    
-                  
+                    <InfoExplanationTitle>댓글</InfoExplanationTitle>                   
+                    <InfoCommentForm onSubmit={handleSubmit(onSubmitValid)}>
+                        <InfoCommentInputText {...register('comment' , {
+                            required: "댓글을 입력해주세요",
+                        })}
+                        type="text"
+                        placeholder="댓글을 입력해주세요"
+                        />
+                        <InfoCommentInputSubmit type="submit" value="댓글등록"/>
+                    </InfoCommentForm>
+                    <CommentList>{commentlist.map((x)=>(
+                                <CommentListitem key={Math.random()}>{x.comment}
+                                <ProjectUnderLine style={{width:"100%", margin:"20px 0px 20px 0px"}}/>
+                                </CommentListitem>
+                    )
+                        )}</CommentList>
                 </InfoExplanationDiv>
             </InfoDiv>
         </>

@@ -2,7 +2,6 @@ export const studyData = [
   {
     id: 1,
     type: "스터디",
-    type: "스터디",
     year: "2022.06.10",
     title: "스터디하실분~~",
     tag: ["#온라인", "#1명", "#2개월"],

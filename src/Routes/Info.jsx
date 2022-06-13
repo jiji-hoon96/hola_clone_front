@@ -5,7 +5,6 @@ import { ProjectUnderLine } from "../components/DivStyle/Divstyle";
 
 const InfoDiv =styled.div`
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 50px;
@@ -13,6 +12,7 @@ const InfoDiv =styled.div`
 `
 const InfoTitleDiv =styled.div`
     display: flex;
+    
 `
 
 const InfoSubTitleDivSeperate =styled.div`
@@ -24,13 +24,16 @@ const InfoSubTitleDiv= styled.div`
     flex-wrap: wrap;
     justify-content: center;
     grid:10px;
+    color:${(props)=>props.theme.fontColor};
     font-size: 24px;
 `
 
 const InfoTitle = styled.div`
     font-size: 60px;
+    color:${(props)=>props.theme.fontColor};
     font-weight: bold;
     margin-bottom: 50px;
+    background-color: ${(props)=>props.theme.infoBgColor};
 `
 
 const InfoTitleWrite = styled.div`
@@ -48,24 +51,47 @@ const InfoSubListTitle = styled.div`
 const InfoSubListObject = styled.div`
     font-weight: bold;
     margin:10px;
+    color:${(props)=>props.theme.fontColor};
 `
 
+const InfoExplanationDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    width:80%;
+    flex-direction: column;
+    align-items: center;
+`
+
+const InfoExplanationTitle =styled.div`
+    font-size:36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color:${(props)=>props.theme.fontColor};
+    background-color: ${(props)=>props.theme.infoBgColor};
+`
+
+const InfoExplanationSubtitle=styled.div`
+    font-size: 20px;
+    color:${(props)=>props.theme.fontColor};
+    line-height: 60px;
+`
 
 export function Info(){
     const location = useLocation();
     const projectlist = location.state?.project
     const studylist = location.state?.study
-    const listdata = projectlist=== undefined? studylist : projectlist
+    const listdata = projectlist=== undefined? studylist : projectlist;
     return (
         <>
             <Navbar/>
             <InfoDiv>
-                <InfoTitle>{listdata.title}</InfoTitle>
+                <InfoTitle>{`${listdata.type} : ${listdata.title}`}</InfoTitle>
                 <InfoTitleDiv>
                     <InfoTitleWrite>{`작성자 : ${listdata.write} `}</InfoTitleWrite>
                     <InfoTitleWrite>{`시작일 : ${listdata.year}`}</InfoTitleWrite>
                 </InfoTitleDiv>
-                <ProjectUnderLine style={{margin:"60px"}}/>
+                <ProjectUnderLine style={{margin:"60px 0px 40px 0px"}}/>
+                <InfoExplanationTitle>프로젝트 내용</InfoExplanationTitle>
                 <InfoSubTitleDiv>
                     <InfoSubTitleDivSeperate>
                         <InfoSubListTitle>모집 구문</InfoSubListTitle>
@@ -96,6 +122,17 @@ export function Info(){
                         <InfoSubListObject>{listdata.skills.join(",")}</InfoSubListObject>
                     </InfoSubTitleDivSeperate>
                 </InfoSubTitleDiv>
+                <ProjectUnderLine style={{margin:"60px 0px 40px 0px"}}/>
+                <InfoExplanationDiv>
+                    <InfoExplanationTitle>프로젝트 소개</InfoExplanationTitle>
+                    <InfoExplanationSubtitle>{listdata.explan}</InfoExplanationSubtitle>
+                </InfoExplanationDiv>
+                <ProjectUnderLine style={{margin:"60px 0px 40px 0px"}}/>
+                <InfoExplanationDiv>
+                    <InfoExplanationTitle>댓글</InfoExplanationTitle>
+                    
+                  
+                </InfoExplanationDiv>
             </InfoDiv>
         </>
         

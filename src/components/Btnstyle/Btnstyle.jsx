@@ -33,20 +33,6 @@ export const SelectBtn = styled(BtnShape)`
         align-items: center;
     }
 `
-export const LoginToggleBtn = styled(BtnShape)`
-    width:230px;
-    color:${(props)=>props.theme.fontColor};
-    height:60px;
-    margin: 0px 10px;
-    :hover{
-        transform: scale(1.05);
-    }
-    div{
-        height:5px;
-        margin-top: 5px;
-        background-color: ${(props)=>props.theme.underLineColor};
-    }
-`
 
 export const NavBtn = styled(BtnShape)`
         color:${(props)=>props.theme.fontColor};
@@ -159,6 +145,7 @@ export const KaKaoBtn = styled(LoginShape)`
 
 export const LoginSubmitBtn = styled.input`
     margin:auto;
+    margin-top:40px;
     width:50%;
     height:40px;
     cursor: pointer;

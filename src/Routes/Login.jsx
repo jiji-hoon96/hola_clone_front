@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import { useState } from "react";
 import { LoginForm,LoginModalForm } from "../components/Formstyle/Formstyle";
-import { LoginToggleBtn,GoogleBtn,GithubBtn,KaKaoBtn,LoginSubmitBtn } from "../components/Btnstyle/Btnstyle";
-import {LoginToggleDiv,LoginBtnDiv} from '../components/DivStyle/Divstyle'
-import { SmallLoginTitle,SmallTitle,LoginTitle } from "../components/Titlestyle/Titlestyle";
+import { GoogleBtn,GithubBtn,KaKaoBtn,LoginSubmitBtn } from "../components/Btnstyle/Btnstyle";
+import {LoginBtnDiv} from '../components/DivStyle/Divstyle'
 import {LoginInputForm} from '../components/Formstyle/Formstyle'
+import { InputTitle,SeperateDivTitle } from "../components/Titlestyle/Titlestyle";
+import { Inputs } from "../components/Inputstyle/Inputstyle";
 
 const LoginLogo =styled.div`
     margin: 30px 0px 10px 0px;
@@ -21,32 +22,6 @@ const SeperateDiv = styled.div`
   width:100%;
   margin-bottom:10px;
   justify-content: space-evenly;
-`
-const SeperateDivTitle= styled.div`
-  margin:auto;
-  margin-bottom: 20px;
-  color:${(props)=>props.theme.loginColor};
-`
-
-const InputTitle= styled.p`
-  margin:10px 0px;
-  color:${(props)=>props.theme.loginColor};
-`
-
-const Inputs = styled.input`
-    font-size: 18px;
-  cursor: pointer;
-  height: 50px;
-  border:none;
-  border-bottom: 1px solid ${(props)=>props.theme.loginColor};
-  margin: 10px;
-  color: ${(props)=>props.theme.fontColor};
-  text-align: center;
-  font-weight: 100;
-  :focus {
-    border:none;
-    border-bottom: 2px solid ${(props)=>props.theme.loginColor};
-  }
 `
 
 function Login() {

@@ -138,10 +138,10 @@ export const ResultSelectBtn =styled.div`
 `
 
 export const GoogleBtn = styled(LoginShape)`
-  width: 200px;
-  height: 66px;
+  width: 100px;
+  height: 60px;
   background-color: transparent;
-  background-image: url("img/logofile/googleimage.png");
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjzC2JyZDZ_RaWf0qp11K0lcvB6b6kYNMoqtZAQ9hiPZ4cTIOB");
   margin: 10px 20px;
 `;
 
@@ -160,6 +160,10 @@ export const KaKaoBtn = styled(LoginShape)`
 `;
 
 export const LoginSubmitBtn = styled.input`
+    margin:auto;
+    width:50%;
+    height:40px;
+    cursor: pointer;
     color: ${(props)=>props.theme.fontColor};
     border:  1px solid  ${(props)=>props.theme.fontColor};
     background-color: ${(props)=>props.theme.submitBtnColor};

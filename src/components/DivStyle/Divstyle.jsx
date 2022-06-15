@@ -157,8 +157,8 @@ export const LoginToggleDiv= styled.div`
 export const LoginBtnDiv = styled.div`
   border-radius: 10px;
   display: flex;
-  width:100px;
-  height: 100px;
+  width:60px;
+  height: 60px;
   justify-content: center;
   align-items: center;
   margin: 10px 0px;

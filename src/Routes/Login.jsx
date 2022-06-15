@@ -19,9 +19,15 @@ const LoginLogo =styled.div`
 const SeperateDiv = styled.div`
   display: flex;
   width:100%;
-  justify-content: space-around;
-  border-top: 1px dashed black;
+  margin-bottom:10px;
+  justify-content: space-evenly;
 `
+const SeperateDivTitle= styled.div`
+  margin:auto;
+  margin-bottom: 20px;
+  color:${(props)=>props.theme.loginColor};
+`
+
 const InputTitle= styled.p`
   margin:10px 0px;
   color:${(props)=>props.theme.loginColor};
@@ -82,6 +88,7 @@ function Login() {
               <span>{errors.password?.message}</span>
               <LoginSubmitBtn type="submit" value="로그인" style={{ fontWeight: "bolder" }}/>   
           </LoginInputForm>
+              <SeperateDivTitle>Or Sign Up Using Platform</SeperateDivTitle>
               <SeperateDiv>
                 <LoginBtnDiv style={{backgroundColor:"white"}}>
                   <GoogleBtn/>

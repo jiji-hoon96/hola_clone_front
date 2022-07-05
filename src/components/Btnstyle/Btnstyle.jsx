@@ -84,6 +84,16 @@ export const BannerBtn = styled.div`
         transition-duration: 0.5s;
         background-color: ${(props)=>props.theme.bannerHover};
     }
+    @media all and (min-width: 480px) and (max-width: 767px) {
+       width:100px;
+       height:100px;
+       font-size: 14px;
+    }
+    @media all and (max-width: 479px) {
+       width:100px;
+       height:100px;
+       font-size: 14px;
+    }
 `
 
 export const PopupSubmitBtn = styled.input`

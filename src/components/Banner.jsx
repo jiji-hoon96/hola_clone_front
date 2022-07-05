@@ -1,71 +1,135 @@
-import React, {Component} from "react";
-import styled from 'styled-components';
+import styled from 'styled-components'
 import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-const Container = styled.div`
-  overflow:hidden;
-  padding-top:200px;
-`;
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {GitImgBox, ImgBox,JobImgBox,NotionImgBox,OkkyImgBox,RocketImgBox,WantedImgBox} from './Boxstyle/Boxstyle'
+import {BannerSettings} from "./ScreenFunc/BannerFunc"
+import {BannerBtn} from './Btnstyle/Btnstyle'
+import {BannerDiv} from './DivStyle/Divstyle'
 
 const StyledSlider = styled(Slider)`
-    .slick-slide div{
-      outline: none;
+    .slick-slider{
+      width:60%;
+      @media all and (min-width: 480px) and (max-width: 767px) {
+        width:70%;
     }
-`;
+    @media all and (max-width: 479px) {
+      width:70%;
+    }
+    }
+    .slick-list{
+      margin:10px 20px;
+      padding-top: 50px;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        margin:0px;
+    }
+    @media all and (max-width: 479px) {
+      margin:0px;
+    }
+    }
+    .slick-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-const ImageContainer = styled.div`
-  margin: 0 16px;
-`;
+    }
+  .slick-dots{
+    margin: 40px 0px 10px 0px;
+  }
+  .slick-dots li {
+    margin: 0 3.5px;
+  }
 
-const Image = styled.img`
-max-width:100%;
-width:100px;
-height:100px;
-max-height:100%;
-`;
+  .slick-dots li button {
+    width: 6px;
+    height: 6px;
+  }
 
+  .slick-dots li button:before {
+    width: 6px;
+    height: 6px;
+    color: ${(props)=>props.theme.fontColor};
+  }
 
-const items = [
-  { id: 1 , url :"https://seeklogo.com/images/G/github-logo-7880D80B8D-seeklogo.com.png"},
-  { id: 2 , url : "https://seeklogo.com/images/N/notion-app-logo-009B1538E8-seeklogo.com.png"},
-  { id: 3 , url : "https://www.gravatar.com/avatar/b66da5ef6099211f5db8f5f7a3b4c36b?d=identicon&s=150"},
-  { id: 4},
-  { id: 5},
-  { id: 6},
-  { id: 7},
-  { id: 8},
-  { id: 9},
-  { id: 10},
-];
+  .slick-dots li.slick-active button:before {
+    color: ${(props)=>props.theme.fontColor} !important;
+  }
 
-const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    centerMode: true,
-      };
-function Banner(){
-    return (
-        <Container>
-        <StyledSlider {...settings}
-        >
-          {items.map(item => {
-            return (
-              <div key={item.id}>
-                <ImageContainer>
-                  <Image src={item.url} />
-                </ImageContainer>
-              </div>
-            );
-          })}
-        </StyledSlider>
-      </Container>
+  li {
+    margin: 0;
+    padding: 0;
+  }
+`
+
+function Banner (){
+    return(
+        <StyledSlider {...BannerSettings}>
+            <BannerDiv >
+              <ImgBox>
+                <BannerBtn>
+                  <a href="https://rustic-tray-8dd.notion.site/0c464036142a430d97ace8b2e9217d13" rel="noreferrer" target='_blank'> 
+                    Organization Notion   
+                  </a>
+                </BannerBtn>
+                <NotionImgBox/>
+              </ImgBox> 
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <BannerBtn>
+                    <a href='https://github.com/h-dt' rel="noreferrer" target="_blank">
+                        Organization Git
+                    </a>
+                </BannerBtn>
+                <GitImgBox/>
+                </ImgBox>
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <BannerBtn>
+                    <a href='https://okky.kr/' rel="noreferrer" target="_blank">
+                        Okky 
+                        <div/>
+                        (채용 정보)
+                    </a>
+                </BannerBtn>
+                <OkkyImgBox/></ImgBox>
+            </BannerDiv>    
+            <BannerDiv>
+                <ImgBox>
+                <BannerBtn>
+                    <a href='https://www.rocketpunch.com/' rel="noreferrer" target="_blank">
+                        Rocket Punch 
+                        <div/>
+                        (채용 정보)
+                    </a>
+                </BannerBtn>
+                <RocketImgBox/></ImgBox>
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <BannerBtn>
+                    <a href='https://www.wanted.co.kr/jobsfeed?utm_source=google&utm_medium=sa&utm_campaign=kr_recruit_web_sa_signup_brand&utm_term=%EC%9B%90%ED%8B%B0%EB%93%9C&utm_content=brand&gclid=CjwKCAjw7vuUBhBUEiwAEdu2pILbav9cmZbSGJI-ytJn2bgrt-U8pO3Kt8pxkkgHvTP5sTWUHGzhbRoC27YQAvD_BwE' rel="noreferrer" target="_blank">
+                        Wanted
+                        <div/>
+                        (채용 정보)
+                    </a>
+                </BannerBtn>
+                <WantedImgBox/></ImgBox>
+            </BannerDiv>
+            <BannerDiv>
+                <ImgBox>
+                <BannerBtn>
+                    <a href='https://www.jobplanet.co.kr/job' rel="noreferrer" target="_blank">
+                       Job Planet 
+                       <div/>
+                       (채용 정보)
+                    </a>
+                </BannerBtn>
+                <JobImgBox/></ImgBox>
+            </BannerDiv>           
+            </StyledSlider>
     )
 }
 
-export default Banner;
+export default Banner

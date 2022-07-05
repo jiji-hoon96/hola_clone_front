@@ -85,14 +85,14 @@ export const BannerBtn = styled.div`
         background-color: ${(props)=>props.theme.bannerHover};
     }
     @media all and (min-width: 480px) and (max-width: 767px) {
-       width:100px;
-       height:100px;
-       font-size: 14px;
+       width:130px;
+       height:130px;
+       font-size: 16px;
     }
     @media all and (max-width: 479px) {
-       width:100px;
-       height:100px;
-       font-size: 14px;
+       width:130px;
+       height:130px;
+       font-size: 16px;
     }
 `
 
@@ -132,6 +132,10 @@ export const ResultSelectBtn =styled.div`
     justify-content: center;
     font-weight: 700;
     font-size: 1.3rem;
+    transition : transform 250ms;
+    :hover{
+        transform: translateY(-3px);
+    }
     @media all and (min-width:480px) and (max-width:767px) {
         font-size: 12px;
         width:70px;

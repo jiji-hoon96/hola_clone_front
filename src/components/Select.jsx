@@ -145,15 +145,19 @@ function Select(){
                                         ))}
                                         <ProjectUnderLine/>
                                         <ProjectUnderDiv>
-                                            <ProjectSeperate>
-                                            {`작성자 : ${project.write}`}
-                                            </ProjectSeperate>
-                                            <ProjectSeperate style={{alignsItems:"center"}}>
-                                                <AiOutlineEye style={{marginRight:"3px"}}/>{project.view}
-                                            </ProjectSeperate>
-                                            <ProjectSeperate>
-                                                <AiOutlineComment style={{marginRight:"3px"}}/>{project.comment}
-                                            </ProjectSeperate>
+                                            <div>
+                                                <ProjectSeperate>
+                                                {`작성자 : ${project.write}`}
+                                                </ProjectSeperate>
+                                            </div>
+                                            <div style={{display:"flex"}}>
+                                                <ProjectSeperate style={{alignsItems:"center"}}>
+                                                    <AiOutlineEye style={{marginRight:"3px"}}/>{project.view}
+                                                </ProjectSeperate>
+                                                <ProjectSeperate>
+                                                    <AiOutlineComment style={{marginRight:"3px"}}/>{project.comment}
+                                                </ProjectSeperate>
+                                            </div>
                                         </ProjectUnderDiv>
                                     </Link>
                                 </ProjectDiv>
@@ -167,7 +171,7 @@ function Select(){
                                 <ProjectDiv key={Math.random()}>
                                     <Link to={{pathname:`/info/${study.url}`}} state={{study}}  key={Math.random()}>
                                         <ProjectDayTitle>
-                                            {study.year}
+                                            {`시작 예정일 | ${study.year}`}
                                         </ProjectDayTitle>
                                         <ProjectTitle>
                                             {study.title}
@@ -182,15 +186,19 @@ function Select(){
                                         ))}
                                         <ProjectUnderLine/>
                                         <ProjectUnderDiv>
-                                            <ProjectSeperate>
-                                            {`작성자 : ${study.write}`}
-                                            </ProjectSeperate>
-                                            <ProjectSeperate style={{alignsItems:"center"}}>
-                                                <AiOutlineEye style={{marginRight:"3px"}}/>{study.view}
-                                            </ProjectSeperate>
-                                            <ProjectSeperate>
-                                                <AiOutlineComment style={{marginRight:"3px"}}/>{study.comment}
-                                            </ProjectSeperate>
+                                            <div>
+                                                <ProjectSeperate>
+                                                {`작성자 : ${study.write}`}
+                                                </ProjectSeperate>
+                                            </div>
+                                            <div style={{display:"flex"}}>
+                                                <ProjectSeperate style={{alignsItems:"center"}}>
+                                                    <AiOutlineEye style={{marginRight:"3px"}}/>{study.view}
+                                                </ProjectSeperate>
+                                                <ProjectSeperate>
+                                                    <AiOutlineComment style={{marginRight:"3px"}}/>{study.comment}
+                                                </ProjectSeperate>
+                                            </div>
                                         </ProjectUnderDiv>
                                     </Link>
                                 </ProjectDiv>

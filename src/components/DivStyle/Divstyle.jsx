@@ -106,6 +106,7 @@ border-radius: 10px;
 `
 
 export const ResultDiv =styled.div`
+    width:90%;
     height:100%;
     background-color: ${(props)=>props.theme.bgColor};
     border-radius: 10px;
@@ -208,7 +209,6 @@ export const WriteBtnDiv = styled.div`
 
 export const ProjectDiv = styled.div`
     display:flex;
-    justify-content: center;
     width:400px;
     align-items: center;
     flex-direction: column;
@@ -222,18 +222,19 @@ export const ProjectDiv = styled.div`
     }
 `
 export const ProjectSkillDiv =styled.div`
-    margin:3px;
+    margin:10px;
     color: #9c9c9e;
 `
 export const ProjectUnderLine = styled.div`
-    width: 70%;
-    margin: 10px 0px;
+    width: 90%;
+    margin: 10px;
     height:3px;
     background-color: #9c9c9e;;
 `
 export const ProjectUnderDiv = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
 `
 
 export const ProjectSeperate = styled.div`

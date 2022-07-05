@@ -48,6 +48,7 @@ export const ProjectDayTitle =styled.div`
 `
 export const ProjectTitle =styled.div`
     font-size: 20px;
+    margin: 0px 10px;
     color: ${(props)=>props.theme.fontColor};
 `
 export const ProjectTagTitle =styled.div`

@@ -5,24 +5,28 @@ export const BannerDiv = styled.div`
 `
 
 export const NavbarRightDiv = styled.div`
-  margin-left: 200px;
-  height:50px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+    width:70%;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 `
 export const Navbardiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: -webkit-sticky;
-  position: sticky;
-  top: -5px;
-  z-index: 2;
-  height: 110px;
-  min-height: 70px;
-  background-color: ${(props)=>props.theme.bgColor};
-  box-shadow:${(props)=>props.theme.nav};
+    width:100%;
+    position: fixed;
+    display: flex;
+    height:120px;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    opacity: 0.97;
+    box-shadow:${(props)=>props.theme.nav};
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        padding:0px 20px;
+    }
+    @media all and (max-width: 479px) {
+        padding:0px 20px;
+    }
 `
 
 export const PopUpDiv= styled.div`
@@ -43,6 +47,8 @@ export const PopUpDiv= styled.div`
 `
 
 export const SelectDiv= styled.div`
+    padding-top: 150px;
+    margin: 0 auto;
     width:100%;
     height:100%;
     background-color: ${(props)=>props.theme.bgColor};
@@ -118,7 +124,7 @@ export const SelectBarDiv = styled.div`
 export const ShowSelectListDiv = styled.div`
     display: flex;
     gap: 5px;
-    width:50%;
+    width:100%;
     flex-wrap: wrap;
     margin : 20px 0px 20px 80px;
     background-color: ${(props)=>props.theme.bgColor};

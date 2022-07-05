@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
-const BtnShape =styled.button`
-    width:120px;
+const BtnShape =styled.div`
+    width:100px;
     font-weight: bold;
-    margin-right: 20px;
+    margin: 0 auto;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
     background-color: transparent;
     font-size: 18px;
     height:50px;
@@ -23,32 +25,32 @@ export const SelectBtn = styled(BtnShape)`
     :hover{
         transform: scale(1.03);
     }
-    div{
-        background-color: ${(props)=>props.theme.underLineColor};
-        width:100%;
-        margin-top: 5px;
-        height:5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 `
 
-export const NavBtn = styled(BtnShape)`
-        color:${(props)=>props.theme.fontColor};
-        margin-bottom: 5px;
-      :hover{
-        transform: scale(1.03);
-        div{
-            background-color: ${(props)=>props.theme.underLineColor};
-            width:100%;
-            height:5px;
-            margin-top: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+export const NavBtn = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 10px 0px 0px;
+    font-size:20px;
+    font-weight: bold;
+    width: 150px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 250ms;
+    @media all and (min-width:480px) and (max-width:767px) {
+        font-size: 12px;
+        width:80px;
+        height:50px;
+    } 
+    @media all and (max-width:479px) {
+        font-size: 12px;
+        width:80px;
+        height:50px;
     }
-  }
+    :hover{
+        transform: translateY(-3px);
+    }
 `
 
 export const BannerBtn = styled.div`

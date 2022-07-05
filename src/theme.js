@@ -11,7 +11,7 @@ export const darkTheme = {
   reset: "red",
   infoBgColor: "#33d9b2",
   nav: " 0 0.125rem 0.25rem 0 rgb(80  80 80 / 80%)",
-  logo: "linear-gradient(-225deg,#fbc531 0%,#e84118 29%,#9c88ff 67%, #00a8ff 100%);",
+  logo: "linear-gradient(-225deg,#F0F2F0 0%,#F0F2F0 29%,#000C40 67%, #000C40 100%);",
 };
 
 export const lightTheme = {

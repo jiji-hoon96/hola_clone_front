@@ -20,7 +20,17 @@ const LoginShape = styled.div`
   background-color: ${(props)=>props.theme.bgColor};
 `
 
-export const SelectBtn = styled(BtnShape)`
+export const SelectBtn = styled.div`
+    font-weight: bold;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    font-size: 18px;
+    height:50px;
     color:${(props)=>props.theme.fontColor};
     :hover{
         transform: scale(1.03);
@@ -105,23 +115,22 @@ export const ResetBtn =styled.div`
     `
     
 export const ResultSelectBtn =styled.div`    
-    font-size: 28px;
     display: flex;
-    justify-content: center;
-    margin:10px 60px;
-    flex-direction: column;
+    align-items: center;
+    margin-right: 1.5rem;
     cursor: pointer;
-    :hover{
-        transform: scale(1.1);
-    }
-    div{
-            background-color: ${(props)=>props.theme.underLineColor};
-            width:100%;
-            height:5px;
-            margin-top: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    @media all and (min-width:480px) and (max-width:767px) {
+        font-size: 12px;
+        width:70px;
+        margin-right: 3px;
+    } 
+    @media all and (max-width:479px) {
+        font-size: 12px;
+        width:70px;
+        margin-right: 3px;
     }
 `
 

@@ -7,13 +7,23 @@ export const BannerDiv = styled.div`
 export const NavbarRightDiv = styled.div`
     width:70%;
     display:flex;
-    justify-content: center;
+    justify-content: flex-end;
+    padding-right: 10%;
     text-align: center;
     align-items: center;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        width:60%;
+        padding-right: 2%;
+    }
+    @media all and (max-width: 479px) {
+        width:60%;
+        padding-right: 2%;
+    }
 `
 export const Navbardiv = styled.div`
     width:100%;
     position: fixed;
+    justify-content: space-around;
     display: flex;
     height:120px;
     top: 0;
@@ -48,7 +58,7 @@ export const PopUpDiv= styled.div`
 
 export const SelectDiv= styled.div`
     padding-top: 150px;
-    margin: 0 auto;
+    margin-bottom: 50px;
     width:100%;
     height:100%;
     background-color: ${(props)=>props.theme.bgColor};
@@ -56,6 +66,12 @@ export const SelectDiv= styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+       display:none;
+    }
+    @media all and (max-width: 479px) {
+       display:none;
+    }
 `
 
 export const ShowDiv = styled.ul`
@@ -95,26 +111,37 @@ export const ResultDiv =styled.div`
     background-color: ${(props)=>props.theme.bgColor};
     border-radius: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    margin: 30px 40px;
+    margin: 0 auto;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+       padding-top: 150px;
+       margin: 0 auto;
+    }
+    @media all and (max-width: 479px) {
+       padding-top: 150px;
+       margin: 0 auto;
+    }
 `
 export const ResultSelectBtnDiv= styled.div`
+    width:90%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: ${(props)=>props.theme.bannerBtnColor};
-    width:500px;
-    height:100px;
-    margin:20px;
-    border-radius: 10px;
+    position: relative;
+    margin-bottom: 2rem;
+    color:${(props)=>props.theme.fontColor};
+    @media all and (min-width:480px) and (max-width:767px) {
+        flex-direction: column;
+    } 
+    @media all and (max-width:479px) {
+        flex-direction: column;
+    }   
 `
 
 export const SelectBarDiv = styled.div`
     display: flex;
+    width:80%;
     height:60px;
-    margin: 15px 0px;
+    margin: 15px 30px;
     align-items: center;
     justify-content: center;
     background-color: ${(props)=>props.theme.bgColor};
@@ -124,7 +151,7 @@ export const SelectBarDiv = styled.div`
 export const ShowSelectListDiv = styled.div`
     display: flex;
     gap: 5px;
-    width:100%;
+    width:80%;
     flex-wrap: wrap;
     margin : 20px 0px 20px 80px;
     background-color: ${(props)=>props.theme.bgColor};
@@ -188,6 +215,7 @@ export const ProjectDiv = styled.div`
     flex-direction: column;
     border: 1px solid #dcdde1;
     border-radius: 10px;
+    margin: 0;
     padding: 50px 10px;
     cursor: pointer;
     :hover{

@@ -10,7 +10,15 @@ const InfoDiv =styled.div`
     align-items: center;
     flex-direction: column;
     margin: 50px;
-    padding:50px;
+    padding:150px 50px 50px 50px;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        margin: 0 auto;
+        padding-top: 150px;
+    }
+    @media all and (max-width: 479px) {
+        margin: 0 auto;
+        padding-top : 150px;
+    }
 `
 const InfoTitleDiv =styled.div`
     display: flex;
@@ -31,11 +39,19 @@ const InfoSubTitleDiv= styled.div`
 `
 
 const InfoTitle = styled.div`
-    font-size: 60px;
+    font-size: 50px;
     color:${(props)=>props.theme.fontColor};
     font-weight: bold;
     margin-bottom: 50px;
     background-color: ${(props)=>props.theme.infoBgColor};
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        font-size: 25px;
+        line-height: 1.4em;
+    }
+    @media all and (max-width: 479px) {
+        font-size: 25px;
+        line-height: 1.4em;
+    }
 `
 
 const InfoTitleWrite = styled.div`
@@ -43,6 +59,14 @@ const InfoTitleWrite = styled.div`
     text-align: center;
     margin: 0px 20px;
     color:#9c9c9e;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        font-size: 16px;
+        
+    }
+    @media all and (max-width: 479px) {
+        font-size: 16px;
+        
+    }
 `
 
 const InfoSubListTitle = styled.div`
@@ -52,14 +76,23 @@ const InfoSubListTitle = styled.div`
 
 const InfoSubListObject = styled.div`
     font-weight: bold;
+  
     margin:10px;
     color:${(props)=>props.theme.fontColor};
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        line-height: 1.4em;
+        
+    }
+    @media all and (max-width: 479px) {
+        line-height: 1.4em;
+        
+    }
 `
 
 const InfoExplanationDiv = styled.div`
     display: flex;
     justify-content: center;
-    width:80%;
+    width:100%;
     flex-direction: column;
     align-items: center;
 `
@@ -70,12 +103,28 @@ const InfoExplanationTitle =styled.div`
     font-weight: bold;
     color:${(props)=>props.theme.fontColor};
     background-color: ${(props)=>props.theme.infoBgColor};
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        font-size: 30px;
+        
+    }
+    @media all and (max-width: 479px) {
+        font-size: 30px;
+        
+    }
 `
 
 const InfoExplanationSubtitle=styled.div`
     font-size: 20px;
     color:${(props)=>props.theme.fontColor};
     line-height: 60px;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+            font-size: 14px;
+        
+    }
+    @media all and (max-width: 479px) {
+        font-size: 14px;
+        
+    }
 `
 
 const InfoCommentForm = styled.form`
@@ -94,6 +143,12 @@ const InfoCommentInputText = styled.input`
     height: 150px;
     font-size: 24px;
     margin : 20px 0px;
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        width:350px;
+    }
+    @media all and (max-width: 479px) {
+        width:350px;
+    }
 `
 const InfoCommentInputSubmit =styled.input`
     display: flex;
@@ -147,7 +202,8 @@ export function Info(){
         <>
             <Navbar/>
             <InfoDiv>
-                <InfoTitle>{`${listdata.type} : ${listdata.title}`}</InfoTitle>
+                <InfoTitle style={{textAlign:"center" ,fontSize:"70px"}}>{listdata.type}</InfoTitle>
+                <InfoTitle>{listdata.title}</InfoTitle>
                 <InfoTitleDiv>
                     <InfoTitleWrite>{`작성자 : ${listdata.write} `}</InfoTitleWrite>
                     <InfoTitleWrite>{`시작일 : ${listdata.year}`}</InfoTitleWrite>
@@ -181,7 +237,7 @@ export function Info(){
                     </InfoSubTitleDivSeperate>
                     <InfoSubTitleDivSeperate>
                         <InfoSubListTitle>사용 언어</InfoSubListTitle>
-                        <InfoSubListObject>{listdata.skills.join(",")}</InfoSubListObject>
+                        <InfoSubListObject>{listdata.skills.join("  ")}</InfoSubListObject>
                     </InfoSubTitleDivSeperate>
                 </InfoSubTitleDiv>
                 <ProjectUnderLine style={{margin:"60px 0px 40px 0px"}}/>

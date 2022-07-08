@@ -22,12 +22,19 @@ const RightDiv =styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+    :hover{
+        transform: scale(1.1);
+        transform:translateY(-5px);
+        transition-duration: 1s;
+    }
    @media all and (min-width:480px) and (max-width:767px) {
-        margin-top: 20px;
+        margin-top: 30px;
         justify-content: center;
     } 
     @media all and (max-width:479px) {
-        margin-top: 20px;
+        margin-top: 30px;
         justify-content: center;
     } 
 `

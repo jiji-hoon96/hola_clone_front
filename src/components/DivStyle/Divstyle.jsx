@@ -49,10 +49,28 @@ export const PopUpDiv= styled.div`
     border-radius: 50%;
     background-color: ${(props)=>props.theme.underLineColor};
     left:20px;
-    bottom: 20px;   
+    bottom: 20px;  
+    z-index: 4;
     cursor: pointer;
     :hover{
-        transform: scale(1.05);
+        transform: scale(1.2);
+        transition-duration: 1s;
+    }
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        width:50px;
+        height:50px;
+        svg{
+            width:30px;
+            height:30px;
+        }
+    }
+    @media all and (max-width: 479px) {
+        width:50px;
+        height:50px;
+        svg{
+            width:30px;
+            height:30px;
+        }
     }
 `
 
@@ -100,6 +118,8 @@ border-radius: 10px;
 :hover{
     cursor: pointer;
     transform: scale(1.05);
+    transform: translateY(-5px);
+    transition-duration: 1s;
     background-color: ${(props)=>props.theme.bannerHover};
     color:${(props)=>props.theme.boxFontHoverColor};
 }
@@ -174,6 +194,8 @@ export const ShowSelectListItemDiv = styled.div`
     :hover{
         cursor: pointer;
         transform: scale(1.05);
+        transform: translateY(-5px);
+        transition-duration: 1s;
         background-color: ${(props)=>props.theme.bgColor};
         color:${(props)=>props.theme.fontColor};
     }
@@ -219,6 +241,9 @@ export const ProjectDiv = styled.div`
     cursor: pointer;
     :hover{
         transform: scale(1.05);
+        transform: translateY(-5px);
+        transition-duration: 1s;
+
     }
 `
 export const ProjectSkillDiv =styled.div`

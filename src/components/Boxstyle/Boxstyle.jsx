@@ -111,6 +111,7 @@ export const ResultBox= styled.div`
     grid-gap: 35px;
     gap: 35px;
     flex-wrap: wrap;
+    z-index: 3;
     @media all and (min-width: 480px) and (max-width: 767px) {
       width:100%;
     }

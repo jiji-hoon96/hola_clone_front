@@ -33,7 +33,10 @@ export const SelectBtn = styled.div`
     height:50px;
     color:${(props)=>props.theme.fontColor};
     :hover{
-        transform: scale(1.03);
+        transform: scale(1.05);
+        transform: translateY(-5px);
+        transition-duration: 1s;
+        border-bottom: 1px solid ${(props)=>props.theme.fontColor};
     }
 `
 
@@ -121,6 +124,8 @@ export const ResetBtn =styled.div`
     border-radius: 20px;
     :hover{
         transform: scale(1.1);
+        transform: translateY(-5px);
+        transition-duration: 1s;
     }
     `
     

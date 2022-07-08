@@ -10,7 +10,7 @@ export const PopupForm = styled.form`
 
 export const LoginForm = styled.div`
   display: flex;
-  padding:70px;
+  padding-top: 120px;
   justify-content: center;
   
 `
@@ -45,7 +45,6 @@ span {
 
 export const WriteForm = styled.form`
   display: flex;
-  margin-left: 70px;
   margin-bottom: 30px;
   font-weight: 100;
   justify-content: center;

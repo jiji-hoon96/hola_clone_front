@@ -38,6 +38,7 @@ const ColumnDiv =styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width:90%;
 `
 
 const ITEM_HEIGHT = 48;

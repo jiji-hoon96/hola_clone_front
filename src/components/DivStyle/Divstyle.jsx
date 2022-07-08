@@ -222,6 +222,7 @@ export const WriteDiv= styled.div`
     gap: 5px;
     flex-wrap: wrap;
     margin: 30px;
+    padding-top: 100px;
 `
 
 export const WriteBtnDiv = styled.div`

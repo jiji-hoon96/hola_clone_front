@@ -214,7 +214,8 @@ export const LoginBtnDiv = styled.div`
   box-shadow: 2px 2px 2px 2px gray;
   cursor: pointer;
   :hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    transition-duration: 1s;
   }
 `
 export const WriteDiv= styled.div`

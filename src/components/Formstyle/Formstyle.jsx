@@ -30,9 +30,8 @@ export const LoginInputForm = styled.form`
 display: flex;
 font-weight: 100;
 height: 400px;
+padding: 30px;
 color: ${(props)=>props.theme.fontColor};
-margin:20px;
-padding:30px;
 flex-direction: column;
 span {
   font-weight: bold;

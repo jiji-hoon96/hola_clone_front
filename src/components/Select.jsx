@@ -43,18 +43,23 @@ const RightDiv =styled.div`
 function Select(){
     const [currentTab, setCurrentTab] = useState(0);
     const [selectSubject , setSelectSubject] = useState(0);
+    console.log(selectSubject);
     const [all ,setAll] = useState(false);
     const [returnitem, setReturnItem] = useState("");
     const newArray= []
     const onResetBtn = () =>{
         setReturnItem("")
     }
-    const onClickSujectPrev=()=>{
+    const onSelectAll = ()=>[
+        setSelectSubject(0)
+    ]
+
+    const onSelectProject=()=>{
         setSelectSubject(1)
     }
 
-    const onClickSubjectCur=()=>{
-        setSelectSubject(0)
+    const onSelectStudy=()=>{
+        setSelectSubject(2)
     }
     localStorage.setItem("skill",returnitem);
     const selectMenuHandler = (index) => {
@@ -82,7 +87,7 @@ function Select(){
             <SelectBarDiv>
             {dataSkill.map((ele,index)=>{
                 return (
-                    <SelectBtn key={index} onClick={()=>selectMenuHandler(index)} color={index === currentTab ? "#70a1ff": ""} >
+                    <SelectBtn key={index} onClick={()=>selectMenuHandler(index)} color={index === currentTab ? "#6190E8": ""} >
                         {ele.name}
                     </SelectBtn>
                 )
@@ -112,15 +117,15 @@ function Select(){
         <ResultDiv>
             <ResultSelectBtnDiv>
                 <LeftDiv>
-                    <ResultSelectBtn >
+                    <ResultSelectBtn onClick={onSelectAll} select={selectSubject === 0 && "#6190E8"}>
                         <FontAwesomeIcon icon={faBorderAll} style={{marginRight:"10px"}}/>
                         전체 
                     </ResultSelectBtn>
-                    <ResultSelectBtn onClick={onClickSubjectCur}>
+                    <ResultSelectBtn onClick={onSelectProject} select={selectSubject === 1 && "#6190E8"}>
                         <FontAwesomeIcon icon={faFolderMinus} style={{marginRight:"10px"}}/>
                         프로젝트
                     </ResultSelectBtn>
-                    <ResultSelectBtn onClick={onClickSujectPrev}>
+                    <ResultSelectBtn onClick={onSelectStudy} select={selectSubject === 2 && "#6190E8"}>
                         <FontAwesomeIcon icon={faMobileScreenButton} style={{marginRight:"10px"}}/>
                         스터디 
                     </ResultSelectBtn>
@@ -131,87 +136,92 @@ function Select(){
             </ResultSelectBtnDiv>
             <ResultBox>
                 {selectSubject ===0 ? 
-                <>
-                    {projectData.map((project)=> {
-                        return (
-                                <ProjectDiv key={Math.random()}>
-                                    <Link to={{pathname:`/info/${project.url}`}} state={{project}} key={Math.random()} >
-                                        <ProjectDayTitle>
-                                            {`시작 예정일 | ${project.year}`}
-                                        </ProjectDayTitle>
-                                        <ProjectTitle>
-                                            {project.title}
-                                        </ProjectTitle>
-                                        <ProjectTagTitle>
-                                            {project.tag}
-                                        </ProjectTagTitle>
-                                        {project.skills.map((x)=> (
-                                        <ProjectSkillDiv key={Math.random()}>
-                                            {x}
-                                        </ProjectSkillDiv>    
-                                        ))}
-                                        <ProjectUnderLine/>
-                                        <ProjectUnderDiv>
-                                            <div>
-                                                <ProjectSeperate>
-                                                {`작성자 : ${project.write}`}
-                                                </ProjectSeperate>
-                                            </div>
-                                            <div style={{display:"flex"}}>
-                                                <ProjectSeperate style={{alignsItems:"center"}}>
-                                                    <AiOutlineEye style={{marginRight:"3px"}}/>{project.view}
-                                                </ProjectSeperate>
-                                                <ProjectSeperate>
-                                                    <AiOutlineComment style={{marginRight:"3px"}}/>{project.comment}
-                                                </ProjectSeperate>
-                                            </div>
-                                        </ProjectUnderDiv>
-                                    </Link>
-                                </ProjectDiv>
-                            
-                        )
-                    })}
-                </>:
-                <>
-                    {studyData.map((study)=> {
-                        return (
-                                <ProjectDiv key={Math.random()}>
-                                    <Link to={{pathname:`/info/${study.url}`}} state={{study}}  key={Math.random()}>
-                                        <ProjectDayTitle>
-                                            {`시작 예정일 | ${study.year}`}
-                                        </ProjectDayTitle>
-                                        <ProjectTitle>
-                                            {study.title}
-                                        </ProjectTitle>
-                                        <ProjectTagTitle>
-                                            {study.tag}
-                                        </ProjectTagTitle>
-                                        {study.skills.map((x)=> (
-                                        <ProjectSkillDiv key={Math.random()}>
-                                            {x}
-                                        </ProjectSkillDiv>    
-                                        ))}
-                                        <ProjectUnderLine/>
-                                        <ProjectUnderDiv>
-                                            <div>
-                                                <ProjectSeperate>
-                                                {`작성자 : ${study.write}`}
-                                                </ProjectSeperate>
-                                            </div>
-                                            <div style={{display:"flex"}}>
-                                                <ProjectSeperate style={{alignsItems:"center"}}>
-                                                    <AiOutlineEye style={{marginRight:"3px"}}/>{study.view}
-                                                </ProjectSeperate>
-                                                <ProjectSeperate>
-                                                    <AiOutlineComment style={{marginRight:"3px"}}/>{study.comment}
-                                                </ProjectSeperate>
-                                            </div>
-                                        </ProjectUnderDiv>
-                                    </Link>
-                                </ProjectDiv>
-                        )
-                    })}
-                </>
+                    <>
+                    <ProjectDiv>
+                        <h1>전체 내용이 들어가야 합니다</h1>
+                    </ProjectDiv>
+                    </>
+                 : selectSubject ===1 ?   <>
+                 {projectData.map((project)=> {
+                     return (
+                             <ProjectDiv key={Math.random()}>
+                                 <Link to={{pathname:`/info/${project.url}`}} state={{project}} key={Math.random()} >
+                                     <ProjectDayTitle>
+                                         {`시작 예정일 | ${project.year}`}
+                                     </ProjectDayTitle>
+                                     <ProjectTitle>
+                                         {project.title}
+                                     </ProjectTitle>
+                                     <ProjectTagTitle>
+                                         {project.tag}
+                                     </ProjectTagTitle>
+                                     {project.skills.map((x)=> (
+                                     <ProjectSkillDiv key={Math.random()}>
+                                         {x}
+                                     </ProjectSkillDiv>    
+                                     ))}
+                                     <ProjectUnderLine/>
+                                     <ProjectUnderDiv>
+                                         <div>
+                                             <ProjectSeperate>
+                                             {`작성자 : ${project.write}`}
+                                             </ProjectSeperate>
+                                         </div>
+                                         <div style={{display:"flex"}}>
+                                             <ProjectSeperate style={{alignsItems:"center"}}>
+                                                 <AiOutlineEye style={{marginRight:"3px"}}/>{project.view}
+                                             </ProjectSeperate>
+                                             <ProjectSeperate>
+                                                 <AiOutlineComment style={{marginRight:"3px"}}/>{project.comment}
+                                             </ProjectSeperate>
+                                         </div>
+                                     </ProjectUnderDiv>
+                                 </Link>
+                             </ProjectDiv>
+                         
+                     )
+                 })}
+             </>  : 
+                     <>
+                     {studyData.map((study)=> {
+                         return (
+                                 <ProjectDiv key={Math.random()}>
+                                     <Link to={{pathname:`/info/${study.url}`}} state={{study}}  key={Math.random()}>
+                                         <ProjectDayTitle>
+                                             {`시작 예정일 | ${study.year}`}
+                                         </ProjectDayTitle>
+                                         <ProjectTitle>
+                                             {study.title}
+                                         </ProjectTitle>
+                                         <ProjectTagTitle>
+                                             {study.tag}
+                                         </ProjectTagTitle>
+                                         {study.skills.map((x)=> (
+                                         <ProjectSkillDiv key={Math.random()}>
+                                             {x}
+                                         </ProjectSkillDiv>    
+                                         ))}
+                                         <ProjectUnderLine/>
+                                         <ProjectUnderDiv>
+                                             <div>
+                                                 <ProjectSeperate>
+                                                 {`작성자 : ${study.write}`}
+                                                 </ProjectSeperate>
+                                             </div>
+                                             <div style={{display:"flex"}}>
+                                                 <ProjectSeperate style={{alignsItems:"center"}}>
+                                                     <AiOutlineEye style={{marginRight:"3px"}}/>{study.view}
+                                                 </ProjectSeperate>
+                                                 <ProjectSeperate>
+                                                     <AiOutlineComment style={{marginRight:"3px"}}/>{study.comment}
+                                                 </ProjectSeperate>
+                                             </div>
+                                         </ProjectUnderDiv>
+                                     </Link>
+                                 </ProjectDiv>
+                         )
+                     })}
+                 </>
                 }
                 
             </ResultBox>

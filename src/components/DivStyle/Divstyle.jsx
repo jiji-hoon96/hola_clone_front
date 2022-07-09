@@ -237,7 +237,7 @@ export const ProjectDiv = styled.div`
     flex-direction: column;
     border: 1px solid #dcdde1;
     border-radius: 10px;
-    margin: 0;
+    margin-bottom: 50px;
     padding: 50px 10px;
     cursor: pointer;
     :hover{

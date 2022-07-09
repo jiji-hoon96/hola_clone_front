@@ -138,14 +138,17 @@ export const ResultSelectBtn =styled.div`
     cursor: pointer;
     justify-content: center;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    padding: 10px 5px;
     transition : transform 250ms;
+    border-radius: 10px;
+    background-color: ${(props)=>props.select};
     :hover{
         transform: translateY(-3px);
     }
     @media all and (min-width:480px) and (max-width:767px) {
         font-size: 12px;
-        width:70px;
+        width:100px;
         margin-right: 3px;
     } 
     @media all and (max-width:479px) {

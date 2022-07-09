@@ -254,10 +254,10 @@ export const ProjectSkillDiv =styled.div`
     color: #9c9c9e;
 `
 export const ProjectUnderLine = styled.div`
-    width: 90%;
+    width: 100%;
     margin: 10px;
-    height:3px;
-    background-color: #9c9c9e;;
+    height:2px;
+    background-color: #F2F2F2;
 `
 export const ProjectUnderDiv = styled.div`
     display: flex;

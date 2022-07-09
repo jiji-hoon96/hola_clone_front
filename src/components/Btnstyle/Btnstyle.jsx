@@ -47,6 +47,7 @@ export const NavBtn = styled.div`
     margin: 0px 10px 0px 0px;
     font-size:20px;
     font-weight: bold;
+    color:${(props)=>props.theme.fontColor};
     width: 150px;
     height: 60px;
     cursor: pointer;

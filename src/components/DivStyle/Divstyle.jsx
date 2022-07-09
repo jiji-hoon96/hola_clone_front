@@ -28,7 +28,7 @@ export const Navbardiv = styled.div`
     height:120px;
     top: 0;
     z-index: 10;
-    background-color: white;
+    background-color: ${(props)=>props.theme.bgColor};
     opacity: 0.97;
     box-shadow:${(props)=>props.theme.nav};
     @media all and (min-width: 480px) and (max-width: 767px) {

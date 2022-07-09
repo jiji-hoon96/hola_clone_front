@@ -200,7 +200,7 @@ display: flex;
 justify-content: center;
 font-size: 18px;
 padding: 1px 6px;
-margin: 25px 0px 15px 0px;
+margin: 30px 0px 15px 0px;
 align-items: center;
 width:150px;
 height: 70px;

@@ -221,13 +221,14 @@ export const WriteDiv= styled.div`
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
-    margin: 30px;
     padding-top: 100px;
 `
 
 export const WriteBtnDiv = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 `
 
 export const ProjectDiv = styled.div`

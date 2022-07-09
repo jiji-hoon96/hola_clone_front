@@ -82,7 +82,7 @@ function Select(){
             <SelectBarDiv>
             {dataSkill.map((ele,index)=>{
                 return (
-                    <SelectBtn key={index} onClick={()=>selectMenuHandler(index)}>
+                    <SelectBtn key={index} onClick={()=>selectMenuHandler(index)} color={index === currentTab ? "#70a1ff": ""} >
                         {ele.name}
                     </SelectBtn>
                 )

@@ -32,11 +32,12 @@ export const SelectBtn = styled.div`
     font-size: 18px;
     height:50px;
     color:${(props)=>props.theme.fontColor};
+    background-color: ${(props)=>props.color};
+    border-radius: 10px;
     :hover{
         transform: scale(1.05);
         transform: translateY(-5px);
         transition-duration: 1s;
-        border-bottom: 1px solid ${(props)=>props.theme.fontColor};
     }
 `
 
